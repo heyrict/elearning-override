@@ -49,7 +49,7 @@
             <div class='user_name'>
                 <a class="username_a" href="/G2S/User/Account?leftmenu=D3">
                     <span class="user_sp_img"><img width='20' height='20' /></span>
-                    <span class="user_sp_name">谢祯晖</span>
+                    <span class="user_sp_name">用户</span>
                 </a>             
                 <span class='togArrowWrap'><em class="userInfo_arrow"></em></span>
             </div>
@@ -82,7 +82,14 @@
 
     <div class="work_paper">
         <div class="paper_tit">
-            <h4 ng-bind-template="{{test.Name}}"></h4>
+            <h4>
+              <span ng-bind-template="{{test.Name}}"></span>
+              <a class="hack_btn_answer" style="color:cyan;" href="javascript:;" ng-click="_toggleAnswerDisplay()" 
+                 ng-if="_showAnswer==false" ng-bind-template="显示答案"></a>
+              <a class="hack_btn_answer" style="color:cyan;" href="javascript:;" ng-click="_toggleAnswerDisplay()" 
+                 ng-if="_showAnswer==true" ng-bind-template="隐藏答案"></a>
+              <a style="color:orange;" href="/G2S/CourseLive/Test/viewResults?TestID={{testid}}">参考答案</a>
+            </h4>
             <div class="paper_operation ng-cloak" ng-if="testCanSubmit&&iCanSubmit">
                 <a ng-if="TestUsers.Status==20" class="submit_btn" href="javascript:;" ng-click="Test_Return()">撤回重做</a>
 

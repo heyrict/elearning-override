@@ -41,26 +41,16 @@ DoHomeWorkModule.controller("DoHomeWorkController", [
         $scope.Timelimit = 9999;
         $scope.exerciseConten = $scope.paper.Brief;
       });
+
+      $scope._showAnswer = false;
+      $scope._toggleAnswerDisplay = function() {
+        $scope._showAnswer = !$scope._showAnswer;
+      };
+
       $scope.$on("ngPaperInfo", function(ngRepeatFinishedEvent) {
         // add answer page
         var __orig_title = $(".ng-binding").html();
         var testid = $scope.testid;
-        var __new_title =
-          __orig_title +
-          ' <a class="hack_btn_answer" style="color:cyan;" href="javascript:void(0);">' +
-          "即时答案" +
-          "</a>";
-        __new_title =
-          __new_title +
-          ' <a style="color:orange;" href="/G2S/CourseLive/Test/viewResults?TestID=' +
-          testid +
-          '">' +
-          "参考答案" +
-          "</a>";
-        $("h4.ng-binding").html(__new_title);
-        $("a.hack_btn_answer").on("click", function() {
-          $scope._showAnswer = !$scope._showAnswer;
-        });
 
         //锚点
         var flag = 0;

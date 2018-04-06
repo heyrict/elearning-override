@@ -107,19 +107,26 @@ ViewResultsModule.controller("ViewResultsController", [
           var rows = $scope.TestAnswer[i];
           var _choices = $scope.ExerciseChoices;
           var _choiceID = parseInt(rows.Conten, 10);
-          for (var _i = 0; _i < _choices.length; _i++) {
-            if (_choices[_i].ChoiceID === _choiceID && _choices[_i].IsCorrect) {
-              rows = $.extend(rows, {
-                Score: rows.PaperExerciseScore,
-                isHack: true
-              });
+          var flagisactive = 0;
+
+          if (parseFloat(rows.Score) > 0) {
+            flagisactive = 1;
+          } else {
+            for (var _i = 0; _i < _choices.length; _i++) {
+              if (
+                _choices[_i].ChoiceID === _choiceID &&
+                _choices[_i].IsCorrect
+              ) {
+                rows = $.extend(rows, {
+                  Score: rows.PaperExerciseScore,
+                  isHack: true
+                });
+                flagisactive = 2;
+                break;
+              }
             }
           }
-          var flagisactive = 0;
-          if (parseFloat(rows.Score) > 0) {
-            if (rows.isHack) flagisactive = 2;
-            else flagisactive = 1;
-          }
+
           $scope.AllScore += parseFloat(rows.Score);
           ExerciseAnswerComment(rows.ExerciseID, flagisactive);
           if (rows.IsComment != 1) {
