@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>课程中心4.0</title>
+    <meta name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--[if lte IE 8]>
+       <script>
+         document.createElement('ng-include');
+         document.createElement('ng-pluralize');
+         document.createElement('ng-view');
+        document.createElement('ies-file-uploader');
+         // Optionally these for CSS
+         document.createElement('ng:include');
+         document.createElement('ng:pluralize');
+         document.createElement('ng:view');
+       </script>
+     <![endif]-->
+    <link href="/G2S/Css/footer.css" rel="stylesheet"/>
+<link href="/G2S/Css/header.css" rel="stylesheet"/>
+<link href="/G2S/Frameworks/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+<link href="/G2S/Css/common.css" rel="stylesheet"/>
+
+    <link href="/G2S/Frameworks/angular/dialog/css/ngDialog.css" rel="stylesheet"/>
+<link href="/G2S/Frameworks/angular/dialog/css/ngDialog-theme-plain.css" rel="stylesheet"/>
+<link href="/G2S/Frameworks/angular/dialog/css/ngDialog-theme-default.css" rel="stylesheet"/>
+<link href="/G2S/Frameworks/angular/dialog/css/ngDialog-custom-width.css" rel="stylesheet"/>
+
+    <script>
+        //应用程序根目录-->  结果('/')||('/g2s')
+        window.appPatch = "/G2S" == "/" ? "" : "/G2S";
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        
+
+
+
+<div class='public_header' id='topest'>
+    <div class='header_center'>
+        <div>
+                <a class="company_logo" target="_blank" href=/portal/CC/Index.aspx >南京医科大学</a>
+        </div>
+        <div class='user_box'>
+            <div class='user_name'>
+                <a class="username_a" href="/G2S/User/Account?leftmenu=D3">
+                    <span class="user_sp_img"><img width='20' height='20' /></span>
+                    <span class="user_sp_name">谢祯晖</span>
+                </a>             
+                <span class='togArrowWrap'><em class="userInfo_arrow"></em></span>
+            </div>
+            <ul class='user_info'>
+                      <li><a target="_self" href=/G2S/User/Account?leftmenu=D1>帐号管理</a></li>                                      
+                      <li><a target="_self" href=/G2S/User/Msg?leftmenu=D2>消息中心</a></li>                                      
+                      <li><a target="_self" href=/G2S/User/AddressBook?leftmenu=D3>通讯录</a></li>                                      
+                      <li><a target="_self" href=/G2S/Redir/default.aspx?leftmenu=D4>返回主页</a></li>                                      
+                      <li><a target="_self" href=/G2S/logout.ashx?leftmenu=D5>退出系统</a></li>                                      
+            </ul>
+           
+
+        </div>
+       
+        <ul class='nav_box'>
+            <li><a target="_self" href="/G2S/Redir/default.aspx">返回首页</a></li>
+                        <li class="active"><a target="_self" href=/G2S/Redir/CS.aspx?topmenu=C1>课程学习</a></li>
+                        <li><a target="_self" href=/G2S/Redir/Resource.aspx?topmenu=C2>我的资源</a></li>
+
+            
+        </ul>
+        
+    </div>
+</div>
+        <div>
+            
+<link href="/G2S/Css/test.css" rel="stylesheet" />
+<link href="/G2S/Css/ico.css" rel="stylesheet" />
+<div ng-controller="DoHomeWorkController">
+
+    <div class="work_paper">
+        <div class="paper_tit">
+            <h4 ng-bind-template="{{test.Name}}"></h4>
+            <div class="paper_operation ng-cloak" ng-if="testCanSubmit&&iCanSubmit">
+                <a ng-if="TestUsers.Status==20" class="submit_btn" href="javascript:;" ng-click="Test_Return()">撤回重做</a>
+
+                <a ng-if="TestUsers.Status<20" class="submit_btn" id="a_submit" href="javascript:;" ng-click="Test_Submit()">提交</a>
+                <a ng-if="TestUsers.Status<20" href="javascript:;" id="a_tempsave" ng-click="zancuntishi()">暂存</a>
+            </div>
+        </div>
+        <div class="work_paper_box">
+            <div class="work_status">
+                <p><span>姓　&nbsp;&nbsp;名</span><span ng-bind-template="{{User.UserName}}"></span></p>
+                <p><span>对应章节</span><span ng-bind-template="{{User.ChapterName}}"></span></p>
+                <p><span>成绩类型</span><span ng-bind-template="{{ScaleTypeName}}"></span></p>
+                <p><span>截止日期</span><span ng-bind-template="{{test.EndDate| dateFormatAll}}"></span></p>
+                <p><span>题 目 数</span><span ng-bind-template="{{exercisecount}}"></span></p>
+
+                <p class="last ng-cloak" ng-show="exerciseConten!=''" style=" width:890px;"><span>说&nbsp;&nbsp;明:</span><span ng-bind-template="{{exerciseConten}}"></span></p>
+            </div>
+            <div class="review_box">
+                <div class="section_work" ng-repeat="papergroup in papergrouplist" on-load-time>
+                    <div class="section_tit">
+                        <span ng-bind-template="{{papergroup.GroupName}}"></span>
+                        <p>总题数：<b id="b_exercise_{{papergroup.GroupID}}">2</b>&nbsp;&nbsp;&nbsp;&nbsp;总分数：<b id="b_exercisescore_{{papergroup.GroupID}}">20</b></p>
+                    </div>
+                    <div ng-if="papergroup.Brief!='' && papergroup.Brief!=null" style="border-bottom: 1px solid #d7d7d7; border-left: 1px solid #d7d7d7; border-right: 1px solid #d7d7d7; height:auto; min-height:30px;" ng-bind-template="  注释说明:{{papergroup.Brief}}"></div>
+                    <ul class="question_list">
+                        <li ng-repeat="exercise in exerciselist|exerciseFilter:papergroup.GroupID:papergroup.PaperID" ng-class="{17: 'hearing',5:'hearing',8:'hearing',9:'hearing',12:'hearing', 0: ''}[{{exercise.ExerciseType}}]">
+                            <div ng-if="exercise.ExerciseType==1 " class="ng-cloak">
+                                <div class="issue_box">
+                                    <h4 ><span class="serialNo" id="sp_{{exercise.ExerciseID}}"></span><span ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></span></h4>
+                                    <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                </div>
+                                <div class="true_false">
+                                    <span>
+                                        <a class="true_answer " ng-click="ExerciseChoicesClick(exercise.ExerciseID,1)" id="panduan_{{exercise.ExerciseID}}_1" href="javascript:;">正确</a>
+                                    </span>
+                                    <span>
+                                        <a class="false_answer " ng-click="ExerciseChoicesClick(exercise.ExerciseID,0)" id="panduan_{{exercise.ExerciseID}}_0" href="javascript:;">错误</a>
+                                    </span>
+                                </div>
+                                <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==2 " class="ng-cloak">
+                                <div class="issue_box">
+                                    <h4> <span class="serialNo" id="sp_{{exercise.ExerciseID}}"></span><span ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></span></h4>
+                                    <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                </div>
+                                <div class="radio_list" ng-repeat="exercisechoices in ExerciseChoices|choicesFilter:exercise.ExerciseID|sortFilter:exercise.IsRand">
+                                    <div style="padding-left:25px; line-height:25px">
+                                        <i ng-show="exercise.Answer==exercisechoices.ChoiceID && _showAnswer" style="float:left;margin:4px 0px 5px -25px" class="icon_test true_btn"></i>
+                                        <input type="radio" name="xuanze_{{exercise.ExerciseID}}" ng-click="ExerciseCheckClick(exercise.ExerciseID)" pid="{{exercisechoices.ChoiceID}}" style="float:left;margin:6px 3px 6px 0">
+                                        <span ng-bind-template="{{$index+1|ToNumByLetter:$index+1}}." style="float:left;"></span>
+                                        <div ng-bind-html="exercisechoices.Conten | toHtml" style="float:left"></div>
+                                    </div>
+                                    
+                                </div>
+                                <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==3 " class="ng-cloak">
+                                <div class="issue_box">
+                                    <h4><span class="serialNo" id="sp_{{exercise.ExerciseID}}"></span><span ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></span>  </h4>
+                                    <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                </div>
+                                <div class="radio_list" ng-repeat="exercisechoices in ExerciseChoices|choicesFilter:exercise.ExerciseID|sortFilter:exercise.IsRand">
+                                    <div style="padding-left:15px; line-height:25px">
+                                        <i style=" display: none;float:left; margin: 4px 0px 5px -15px" id="i_{{exercise.ExerciseID}}_{{exercisechoices.ChoiceID}}" class="icon_test false_btn"></i>
+                                        <input type="checkbox" name="xuanze_{{exercise.ExerciseID}}" ng-click="ExerciseCheckClick(exercise.ExerciseID)" pid="{{exercisechoices.ChoiceID}}" style="float:left;margin:6px 3px 6px 0">
+                                        <span ng-bind-template="{{$index+1|ToNumByLetter:$index+1}}." style="float:left;"></span>
+                                        <div ng-bind-html="exercisechoices.Conten | toHtml" style="float:left"></div>
+                                    </div>
+                                    
+                                </div>
+                                <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==4 || exercise.ExerciseType==11" class="ng-cloak">
+                                <div class="issue_box">
+                                    <h4><span class="serialNo" id="sp_{{exercise.ExerciseID}}"></span> <span ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></span> </h4>
+                                    <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                </div>
+                                <div class="radio_list">
+                                   
+                                    <input ng-if="exercise.ExerciseType==4" class="blank_box textblank_box" pid="{{exercise.ExerciseID}}" id="txt_{{exercise.ExerciseID}}" ng-blur="ExerciseTextClick(exercise.ExerciseID,0)" type="text" placeholder="请输入答案">
+                                    <textarea ng-if="exercise.ExerciseType==11" class="blank_box textblank_box" style="height:80px;overflow:auto;" pid="{{exercise.ExerciseID}}" id="txt_{{exercise.ExerciseID}}" ng-blur="ExerciseTextClick(exercise.ExerciseID,0)" ></textarea>
+                                       
+</div>
+                                <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==8 || exercise.ExerciseType==9" class="ng-cloak">
+                                <div class="listen_box">
+                                    <i class="icon connect"></i>
+                                    <div class="listening">
+                                        <h4 ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"> </h4>
+                                        <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                    </div>
+                                </div>
+                                <div ng-repeat="exercise1 in exerciselist|exerciseParentFilter:papergroup.GroupID:papergroup.PaperID:exercise.ExerciseID">
+                                    <div class="issue_box">
+                                        <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span> </h4>
+                                        <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                    </div>
+                                    <div class="radio_list" tabindex="1" ng-if="IsIE==1">
+                                        <input type="hidden" name="oEditor_1" id="oEditor_1" />
+                                        <input type="hidden" name="oEditor_{{exercise1.ExerciseID}}" id="oEditor_{{exercise1.ExerciseID}}" ng-value="frmoEditor_{{exercise1.ExerciseID}}" />
+                                        <iframe src="/G2S/Frameworks/eWebEditor/ewebeditor.htm?id=oEditor_1&amp;style=mini"
+                                                frameborder="0" scrolling="no" width="900" height="220" style="display: block;" id="frmoEditor_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,1)"></iframe>
+                                    </div>
+                                    <div class="radio_list" tabindex="1" ng-if="IsIE==0">
+                                        <textarea style="width:897px; height:120px;" id="txt_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,0)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==10 || exercise.ExerciseType==13" class="ng-cloak">
+                                <div class="issue_box">
+                                    <h4><span class="serialNo" id="sp_{{exercise.ExerciseID}}"></span> <span ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></span> </h4>
+                                    <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                </div>
+                                
+                                <div class="radio_list" tabindex="1" ng-if="IsIE==1">
+                                    <input type="hidden" name="oEditor_1" id="oEditor_1" />
+                                    <input type="hidden" name="oEditor_{{exercise.ExerciseID}}" id="oEditor_{{exercise.ExerciseID}}" ng-value="frmoEditor_{{exercise.ExerciseID}}" />
+                                    <iframe src="/G2S/Frameworks/eWebEditor/ewebeditor.htm?id=oEditor_1&amp;style=mini"
+                                            frameborder="0" scrolling="no" width="900" height="220" style="display: block;" id="frmoEditor_{{exercise.ExerciseID}}" ng-blur="ExerciseTextClick(exercise.ExerciseID,1)"></iframe>
+                                </div>
+                                <div class="radio_list" tabindex="1" ng-if="IsIE==0">
+                                    <textarea style="width:897px; height:120px;" id="txt_{{exercise.ExerciseID}}" ng-blur="ExerciseTextClick(exercise.ExerciseID,0)"></textarea>
+                                </div>
+                                <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==17 ||exercise.ExerciseType==12 || exercise.ExerciseType==14" class="ng-cloak">
+                                <div class="listen_box">
+                                    <i class="icon connect"></i>
+                                    <div class="listening">
+                                        <h4 ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"></h4>
+                                        <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                    </div>
+                                </div>
+                                <div ng-repeat="exercise1 in exerciselist|exerciseParentFilter:papergroup.GroupID:papergroup.PaperID:exercise.ExerciseID">
+                                    <div ng-if="exercise1.ExerciseType==1 ">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span> <span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span> </h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="true_false">
+                                            <span>
+                                                <a class="true_answer " ng-click="ExerciseChoicesClick(exercise1.ExerciseID,1)" id="panduan_{{exercise1.ExerciseID}}_1" href="javascript:;" pid="1">正确</a>
+                                            </span>
+                                            <span>
+                                                <a class="false_answer " ng-click="ExerciseChoicesClick(exercise1.ExerciseID,0)" id="panduan_{{exercise1.ExerciseID}}_0" href="javascript:;" pid="0">错误</a>
+                                            </span>
+
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                    <div ng-if="exercise1.ExerciseType==2 ">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span></h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list" ng-repeat="exercisechoices in ExerciseChoices|choicesFilter:exercise1.ExerciseID|sortFilter:exercise1.IsRand">
+                                            <p><i style=" display:none;" id="i_{{exercise1.ExerciseID}}_{{exercisechoices.ChoiceID}}" class="icon_test false_btn"></i><input type="radio" name="xuanze_{{exercise1.ExerciseID}}" ng-click="ExerciseCheckClick(exercise1.ExerciseID)" pid="{{exercisechoices.ChoiceID}}"><span title="{{exercisechoices.Conten}}" ng-bind-template="{{$index+1|ToNumByLetter:$index+1}}.{{exercisechoices.Conten}}"></span></p>
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                    <div ng-if="exercise1.ExerciseType==3 ">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span> </h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list" ng-repeat="exercisechoices in ExerciseChoices|choicesFilter:exercise1.ExerciseID|sortFilter:exercise1.IsRand">
+                                            <p><i style=" display:none;" id="i_{{exercise1.ExerciseID}}_{{exercisechoices.ChoiceID}}" class="icon_test false_btn"></i><input type="checkbox" name="xuanze_{{exercise1.ExerciseID}}" ng-click="ExerciseCheckClick(exercise1.ExerciseID)" pid="{{exercisechoices.ChoiceID}}"><span title="{{exercisechoices.Conten}}" ng-bind-template="{{$index+1|ToNumByLetter:$index+1}}.{{exercisechoices.Conten}}"></span></p>
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                    <div ng-if="exercise1.ExerciseType==4 || exercise1.ExerciseType==11">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span> <span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span></h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list">
+                                            <input class="blank_box textblank_box" pid="{{exercise1.ExerciseID}}" id="txt_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,0)" type="text" placeholder="请输入答案">
+
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                    <div ng-if="exercise1.ExerciseType==18 ">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span></h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list">
+                                            <textarea style="width:897px; height:120px;" id="txt_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,0)"></textarea>
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                    <div ng-if="exercise1.ExerciseType==10 || exercise1.ExerciseType==13">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span></h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list" tabindex="1" ng-if="IsIE==1">
+                                            <input type="hidden" name="oEditor_1" id="oEditor_1" ng-value="frmoEditor1" />
+                                            <iframe src="/G2S/Frameworks/eWebEditor/ewebeditor.htm?id=oEditor_1&amp;style=mini"
+                                                    frameborder="0" scrolling="no" width="900" height="220" style="display: block;" id="frmoEditor_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,1)"></iframe>
+                                        </div>
+                                        <div class="radio_list" tabindex="1" ng-if="IsIE==0">
+                                            <textarea style="width:897px; height:120px;" id="txt_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,0)"></textarea>
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="exercise.ExerciseType==5" class="ng-cloak">
+                                <div class="listen_box">
+                                    <i class="icon connect"></i>
+                                    <div class="listening">
+                                        <h4 ng-bind-template="【{{exercise.ExerciseTypeName}}】({{exercise.Score}}分)"> </h4>
+                                        <p ng-bind-html="exercise.Conten|toHtml"></p>
+                                    </div>
+                                </div>
+                                <div ng-repeat="exercise1 in exerciselist|exerciseParentFilter:papergroup.GroupID:papergroup.PaperID:exercise.ExerciseID">
+                                    <div ng-if="exercise1.ExerciseType==5 ">
+                                        <div class="issue_box">
+                                            <h4><span class="serialNo" id="sp_{{exercise1.ExerciseID}}"></span><span ng-bind-template="{{$index+1}})  【{{exercise1.ExerciseTypeName}}】({{exercise1.Score}}分)"></span></h4>
+                                            <p ng-bind-html="exercise1.Conten|toHtml"></p>
+                                        </div>
+                                        <div class="radio_list">
+                                            <input class="blank_box textblank_box" pid="{{exercise1.ExerciseID}}" id="txt_{{exercise1.ExerciseID}}" ng-blur="ExerciseTextClick(exercise1.ExerciseID,0)" type="text" placeholder="请输入答案">
+                                            
+                                        </div>
+                                        <p class="answer_tip" style=" display:none;"><i class="icon_test true_btn"></i>回答正确</p>
+                                        <p class="answer_tip wrong_answer" style=" display:none;"><i class="icon_test false_btn"></i>正确答案是：B，D</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="remain_box">
+        <span class="remain_tit">剩余时间（时分）</span>
+        <p class="time_box" id="jishiqi"></p>
+        <span class="remain_tit">完成率</span>
+        <p class="time_box" ng-bind-template="{{wanchenglv}}"></p>
+        <div ng-repeat="papergroup in papergrouplist">
+            <span class="remain_tit"><label style="display: inline-block; margin-bottom:0px;" ng-bind-template="{{papergroup.GroupName}}"> </label><a  ng-click="GroupUpDown($index)" class="ico_up ico_showhide"  tid="1"  style="display: inline-block; margin-bottom: 0px; vertical-align:text-bottom;"></a></span>
+            <div  class="question_num" on-paper-info>
+                <ul><li ng-if="paper.IsTactic==0" id="li_{{exercise.ExerciseID}}" pid="{{exercise.ExerciseID}}" orde="{{exercise.Orde}}" ng-class="{ 'active': exercise.ExerciseAnswerIsactive==1}" ng-repeat="exercise in exerciselist|exerciseFilter2:papergroup.GroupID:papergroup.PaperID" ng-bind-template="{{exercise.Orde}}"></li></ul>
+                
+
+                <div ng-if="paper.IsTactic==1">
+
+                    <ul pid="{{exercise.ExerciseID}}" ng-repeat="exercise in exerciselist|exerciseFilter:papergroup.GroupID:papergroup.PaperID">
+                        <li ng-if="exerciseIsson(exercise.ExerciseID)==0" id="li_{{exercise.ExerciseID}}" pid="{{exercise.ExerciseID}}" orde="{{exercise.Orde}}" ng-class="{ 'active': exercise.ExerciseAnswerIsactive==1}"></li>
+                        <li ng-if="exerciseIsson(exercise.ExerciseID)==1" id="li_{{exercise1.ExerciseID}}" pid="{{exercise1.ExerciseID}}" orde="{{exercise1.Orde}}" ng-repeat="exercise1 in exerciselist|exerciseParentFilter:papergroup.GroupID:papergroup.PaperID:exercise.ExerciseID" ng-class="{ 'active': exercise1.ExerciseAnswerIsactive==1}"></li>
+                    </ul>
+                </div>
+
+
+
+
+                
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+        <div>
+
+<div class='footer'>
+    <p class='copyright'><img src='/G2S/Images/company_logo2.png' width='70' height='30' alt=''>Copyright&#169;2003-2014，卓越版权所有</p>
+    <div class='company_info'>
+        <a href=http://www.able-elec.com target='_blank'>关于卓越</a>
+    </div>
+</div>
+
+</div>
+        <a class='icon backto_top' href='#' onclick="$('body,html').animate({ scrollTop: 0 }, 300);"></a>
+    </div>
+    <script src="/G2S/js/jquery-1.8.3.min.js"></script>
+<script src="/G2S/js/es5.js"></script>
+<script src="/G2S/Frameworks/layer/layer.js"></script>
+<script src="/G2S/Frameworks/layer/extend/layer.ext.js"></script>
+<script src="/G2S/Cropp/jscss/cropbox.js"></script>
+<script src="/G2S/Frameworks/echarts-2.0.1/echarts-2.2.js"></script>
+<script src="/G2S/js/Chart.min.js"></script>
+<script src="/G2S/js/G2S.js"></script>
+<script src="/G2S/Frameworks/bootstrap/js/bootstrap.min.js"></script>
+<script src="/G2S/Frameworks/angular/angular.js"></script>
+<script src="/G2S/Frameworks/angular/angular-sanitize.min.js"></script>
+<script src="/G2S/Frameworks/angular/angular-ui-router.min.js"></script>
+<script src="/G2S/Frameworks/angular/angular-cookies.min.js"></script>
+<script src="/G2S/Frameworks/checklist-model/checklist-model.js"></script>
+<script src="/G2S/Frameworks/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/G2S/Frameworks/bootstrap/js/bootstrap-transition.js"></script>
+<script src="/G2S/Frameworks/laypage/laypage.js"></script>
+<script src="/G2S/Frameworks/My97DatePicker/WdatePicker.js"></script>
+<script src="/G2S/Frameworks/laydate/laydate.js"></script>
+<script src="/G2S/Frameworks/zTree_v3/js/jquery.ztree.all-3.5.js"></script>
+<script src="/G2S/js/es5-shim.min.js"></script>
+<script src="/G2S/js/es5-sham.min.js"></script>
+<script src="/G2S/Frameworks/angular/console-sham.js"></script>
+<script src="/G2S/Frameworks/angular/angular-file-upload.js"></script>
+<script src="/G2S/Frameworks/isteven-multi-select/isteven-multi-select.js"></script>
+
+    <script src="/G2S/js/common.js"></script>
+<script src="/G2S/Frameworks/isteven-multi-select/isteven-multi-select.js"></script>
+
+    <script src="/G2S/scripts/common/directives.js"></script>
+<script src="/G2S/scripts/common/filters.js"></script>
+<script src="/G2S/scripts/common/services.js"></script>
+<script src="/G2S/scripts/controllers/OC/FC/FCController.js"></script>
+<script src="/G2S/scripts/controllers/OC/FC/FCAddController.js"></script>
+<script src="/G2S/scripts/controllers/OC/FC/FCLearnController.js"></script>
+<script src="/G2S/scripts/controllers/OC/Class/ClassController.js"></script>
+<script src="/G2S/scripts/controllers/OC/MOOC/MOOCController.js"></script>
+<script src="/G2S/scripts/controllers/OC/Team/TeamController.js"></script>
+<script src="/G2S/scripts/controllers/home/HomeController.js"></script>
+<script src="/G2S/scripts/controllers/home/StudentController.js"></script>
+<script src="/G2S/scripts/controllers/user/UserController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Forum/ForumController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Score/ScoreController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/TestController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/TestAddController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/MarkingController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/markingCardController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/DoHomeWork.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/DoCardExercise.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/ViewResults.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/PeerAssessment.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/CardPeerAssessment.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/EveryWorkCtrl.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/SmilarityArithmetic.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/Compare.js"></script>
+<script src="/G2S/scripts/controllers/OC/MOOC/MOOCPreviewController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/HomeWorkController.js"></script>
+<script src="/G2S/scripts/controllers/Affairs/AffairsController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/StudyProgress/StudyProgressController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Survey/SurveyController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Vote/VoteController.js"></script>
+<script src="/G2S/scripts/controllers/OC/CourseIndexController.js"></script>
+<script src="/G2S/scripts/controllers/Resource/Paper/PaperAddController.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Test/StudentWorkListCtrl.js"></script>
+<script src="/G2S/scripts/controllers/CourseLive/Survey/SurverEditCtrl.js"></script>
+<script src="/G2S/scripts/controllers/Resource/Paper/PaperIndexController.js"></script>
+<script src="/G2S/scripts/controllers/Resource/Paper/BrowsePaper.js"></script>
+<script src="/G2S/scripts/controllers/Resource/Paper/BrowseCard.js"></script>
+<script src="/G2S/scripts/controllers/OC/FC2/FCTeacherController.js"></script>
+<script src="/G2S/scripts/controllers/OC/FC2/FCStudentController.js"></script>
+<script src="/G2S/js/CerTemplate.js"></script>
+<script src="/G2S/scripts/app.js"></script>
+
+
+    
+    <script>
+        $('.playa_btn').live('click', function () {
+            var fid = this.id.replace('file', '');
+            layer.open({
+                type: 2,
+                title: false,
+                border: [0],
+                scrollbar: false,
+                skin: 'layui-layer-rim',
+                content: ["http://elearning.njmu.edu.cn:80"+'/Upload/HttpUpload/iShowFile.aspx?fid=' + fid, 'no'],
+                area: ['820px', '562px']
+            });
+        })
+    </script>
+</body>
+</html>
