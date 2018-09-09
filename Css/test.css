@@ -1,7 +1,7 @@
 ﻿@charset "utf-8";
 /* CSS Document */
 .add_work_wrap .wrap {
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 /*未评阅*/
 .icon_test {
@@ -19,16 +19,16 @@
   padding: 0 0 10px 25px;
   height: 22px;
   line-height: 22px;
-  border-bottom: 1px solid #374760;
+  border-bottom: 1px solid #586e75;
 }
 .test_tit h5 {
   float: left;
   height: 22px;
   line-height: 22px;
   padding-bottom: 8px;
-  border-bottom: 3px solid #374760;
+  border-bottom: 3px solid #586e75;
   font-size: 14px;
-  color: #333;
+  color: #073642;
 }
 .test_tit h5 span {
   color: #ff3300;
@@ -43,7 +43,7 @@
   height: 39px;
   line-height: 39px;
   border-bottom: 1px solid #d7d7d7;
-  color: #666;
+  color: #586e75;
 }
 .test_table tr th {
   font-weight: normal;
@@ -53,7 +53,7 @@
   height: 25px;
   line-height: 25px;
   padding-left: 8px;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #fdf6e3;
   width: 140px;
 }
 .student_name {
@@ -63,7 +63,7 @@
   display: block;
   margin-top: 10px;
   text-align: center;
-  color: #374760;
+  color: #586e75;
 }
 
 /*作业列表*/
@@ -73,11 +73,11 @@
 .tip_box {
   height: 43px;
   line-height: 43px;
-  background: #fff6e5;
+  background: #fdf6e36e5;
   overflow: hidden;
   zoom: 1;
-  border: 1px solid #e4e4e4;
-  color: #374760;
+  border: 1px solid #fdf6e3;
+  color: #586e75;
   text-align: center;
 }
 .tip_box a {
@@ -127,7 +127,7 @@
   position: relative;
 }
 .progress_text {
-  color: #333;
+  color: #073642;
 }
 .progress_text span {
   color: #008573;
@@ -157,7 +157,7 @@
   padding: 0 13px;
   height: 20px;
   line-height: 20px;
-  color: #fff;
+  color: #fdf6e3;
   background: #ff3300;
   border-radius: 3px;
 }
@@ -182,11 +182,11 @@
   overflow: hidden;
   border-width: 3px;
   border-style: solid;
-  border-color: #333 transparent transparent;
+  border-color: #073642 transparent transparent;
 }
 .work_operation ul {
   display: none;
-  background: #fff;
+  background: #fdf6e3;
   position: absolute;
   top: 15px;
   width: 78px;
@@ -198,7 +198,7 @@
 .work_operation ul li a {
   display: block;
   text-align: center;
-  color: #666;
+  color: #586e75;
   line-height: 25px;
   height: 25px;
   border-top: 1px solid #ccc;
@@ -208,11 +208,11 @@
 }
 .work_operation ul li a:hover {
   background: #008573;
-  color: #fff;
+  color: #fdf6e3;
 }
 
 /*.work_info{ clear:both; overflow:hidden; zoom:1; padding-bottom:10px; border-bottom:1px solid #ccc;}
-.work_info span{ float:left; width:215px; color:#333;}*/
+.work_info span{ float:left; width:215px; color:#073642;}*/
 
 /*修改教师端作业列表样式*/
 .work_info {
@@ -229,7 +229,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #333;
+  color: #073642;
 }
 .work_info em {
   font-style: normal;
@@ -247,10 +247,10 @@
   float: left;
   margin-right: 20px;
   position: relative;
-  color: #fff;
+  color: #fdf6e3;
 }
 .modify_btn .active {
-  background: #475c7c;
+  background: #b58900;
   padding: 0 5px 0 5px;
 }
 .course_content {
@@ -287,7 +287,7 @@
 
 /*点击单个作业*/
 .work_guide {
-  color: #fff;
+  color: #fdf6e3;
   line-height: 54px;
   margin-left: 27px;
 }
@@ -306,8 +306,8 @@
   text-align: center;
   line-height: 22px;
   margin-left: 10px;
-  color: #fff;
-  background: #475c7c;
+  color: #fdf6e3;
+  background: #b58900;
 }
 .work_btn a:hover {
   background: #415572;
@@ -315,9 +315,9 @@
 .work_tip {
   height: 44px;
   line-height: 44px;
-  background: #fff6e5;
+  background: #fdf6e36e5;
   text-align: center;
-  color: #374760;
+  color: #586e75;
 }
 .work_tip a {
   color: #008573;
@@ -342,7 +342,7 @@
   width: 220px;
   height: 26px;
   line-height: 26px;
-  background: #fff;
+  background: #fdf6e3;
 }
 .wrong_box {
   float: left;
@@ -351,7 +351,7 @@
 }
 .wrong_box h5 {
   font-size: 14px;
-  color: #333;
+  color: #073642;
 }
 .wrong_question {
   overflow: hidden;
@@ -359,7 +359,7 @@
 }
 .wrong_question li {
   margin-top: 5px;
-  color: #333;
+  color: #073642;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -372,7 +372,7 @@
   text-align: center;
   background: #008573;
   border: 1px solid #88beb7;
-  color: #fff;
+  color: #fdf6e3;
   margin: 3px 10px 0 0;
 }
 .work_condition {
@@ -386,7 +386,7 @@
   position: relative;
   height: 26px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #374760;
+  border-bottom: 1px solid #586e75;
 }
 .condition_nav {
   margin-left: 25px;
@@ -401,11 +401,11 @@
   height: 26px;
   padding-bottom: 8px;
   font-size: 14px;
-  color: #666;
+  color: #586e75;
 }
 .condition_nav li.active a {
-  border-bottom: 3px solid #374760;
-  color: #374760;
+  border-bottom: 3px solid #586e75;
+  color: #586e75;
 }
 .search_student {
   position: absolute;
@@ -450,19 +450,19 @@
 }
 
 .work_wrap {
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 .work_paper {
   width: 960px;
   min-height: 640px;
   margin: 15px auto 0;
-  background: #fff;
+  background: #fdf6e3;
   overflow: hidden;
 }
 .paper_tit {
   height: 40px;
   line-height: 40px;
-  background: #374760;
+  background: #586e75;
   overflow: hidden;
   position: relative;
   font-family: "宋体";
@@ -470,7 +470,7 @@
 .paper_tit h4 {
   padding-left: 10px;
   font-size: 15px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .paper_operation {
   position: absolute;
@@ -484,14 +484,14 @@
   height: 25px;
   line-height: 25px;
   text-align: center;
-  color: #fff;
-  background: #475c7c;
+  color: #fdf6e3;
+  background: #b58900;
 }
 .paper_operation a.submit_btn {
   background: #2eb165;
 }
 .paper_operation a.submit_btn:hover {
-  background: #2aa45d;
+  background: #859900;
 }
 .paper_operation a:hover {
   background: #425572;
@@ -505,7 +505,7 @@
   padding: 15px 30px;
   margin-top: -10px;
   overflow: hidden;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #fdf6e3;
 }
 .work_status p {
   float: left;
@@ -514,7 +514,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #333;
+  color: #073642;
 }
 .work_status p span {
   float: left;
@@ -541,7 +541,7 @@
   float: left;
   margin-right: 30px;
   font-size: 13px;
-  color: #333;
+  color: #073642;
   font-family: "Arial";
 }
 .work_setting p input {
@@ -560,9 +560,9 @@
   overflow: hidden;
   zoom: 1;
   border: 1px solid #d7d7d7;
-  background: #f2f2f2;
+  background: #eee8d5;
   font-size: 14px;
-  color: #333;
+  color: #073642;
   font-family: "Arial";
 }
 .section_tit span {
@@ -582,8 +582,8 @@
   height: 20px;
   line-height: 20px;
   text-align: center;
-  color: #fff;
-  background: #009900;
+  color: #fdf6e3;
+  background: #859900;
   position: absolute;
   top: 5px;
   right: 12px;
@@ -598,8 +598,8 @@
   height: 20px;
   line-height: 20px;
   text-align: center;
-  color: #fff;
-  background: #009900;
+  color: #fdf6e3;
+  background: #859900;
   cursor: pointer;
 }
 .comment_btn2:hover {
@@ -607,15 +607,15 @@
 }
 .question_list li {
   margin-top: 10px;
-  color: #333;
+  color: #073642;
   overflow: hidden;
 }
 .issue_box {
   line-height: 25px;
   padding: 5px 12px;
-  background: #f2f2f2;
+  background: #eee8d5;
   font-size: 12px;
-  color: #333;
+  color: #073642;
   margin-bottom: 5px;
   font-family: "宋体";
   overflow: hidden;
@@ -669,8 +669,8 @@
   height: 20px;
   line-height: 20px;
   text-align: center;
-  color: #fff;
-  background: #374760;
+  color: #fdf6e3;
+  background: #586e75;
 }
 .refer_btn:hover {
   background: #2c3e59;
@@ -678,11 +678,11 @@
 .reference_answer {
   display: block;
   text-align: center;
-  color: #333;
+  color: #073642;
   margin-top: 10px;
   height: 30px;
   line-height: 30px;
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 .blank_box {
   margin-top: 5px;
@@ -717,7 +717,7 @@
   padding: 5px 12px;
   line-height: 25px;
   font-size: 12px;
-  color: #333;
+  color: #073642;
   font-family: "宋体";
   overflow: hidden;
   position: relative;
@@ -759,7 +759,7 @@
   line-height: 40px;
   text-align: center;
   color: #999;
-  border: 1px solid #666;
+  border: 1px solid #586e75;
 }
 .true_false span i {
   display: block;
@@ -768,7 +768,7 @@
 .true_false span a:hover,
 .true_false span a.active {
   background: #ccc;
-  color: #333;
+  color: #073642;
 }
 .sequence_list {
   margin-top: 10px;
@@ -785,7 +785,7 @@
   height: 22px;
   padding: 4px 0;
   text-align: center;
-  background: #e4e4e4;
+  background: #fdf6e3;
   border: 1px solid #ccc;
 }
 .sequence p {
@@ -799,22 +799,22 @@
   text-align: center;
   line-height: 20px;
   margin: 5px 10px 0 0;
-  color: #fff;
+  color: #fdf6e3;
 }
 .sequence_true {
-  background: #009900;
+  background: #859900;
 }
 .sequence_false {
   background: #ff0000;
 }
 .connection {
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .connection_list {
   overflow: hidden;
   zoom: 1;
   font-size: 13px;
-  color: #333;
+  color: #073642;
   line-height: 30px;
   margin-top: 10px;
 }
@@ -859,7 +859,7 @@
 .answer_tip {
   margin-top: 5px;
   overflow: hidden;
-  color: #009900;
+  color: #859900;
 }
 .wrong_answer {
   color: #ff3300;
@@ -880,7 +880,7 @@
   right: 12px;
   top: 5px;
   line-height: 27px;
-  color: #333;
+  color: #073642;
 }
 .score_box i {
   float: left;
@@ -898,9 +898,9 @@
   background-position: -16px -32px;
 }
 .answer_box {
-  color: #666;
+  color: #586e75;
   padding: 10px;
-  background: #e4e4e4;
+  background: #fdf6e3;
   border: 1px solid #c9c9c9;
   height: 180px;
 }
@@ -924,8 +924,8 @@
 /*剩余时间*/
 .remain_box {
   width: 151px;
-  background: #666;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
   position: fixed;
   top: 68px;
   left: 50%;
@@ -937,7 +937,7 @@
   display: block;
   height: 30px;
   line-height: 30px;
-  background: #333;
+  background: #073642;
   text-align: center;
 }
 .time_box {
@@ -949,9 +949,9 @@
 }
 .question_num {
   overflow: hidden;
-  background: #fff;
-  border-top: 1px solid #374760;
-  border-left: 1px solid #374760;
+  background: #fdf6e3;
+  border-top: 1px solid #586e75;
+  border-left: 1px solid #586e75;
 }
 .question_num li {
   float: left;
@@ -959,19 +959,19 @@
   height: 29px;
   text-align: center;
   line-height: 29px;
-  border-right: 1px solid #374760;
-  border-bottom: 1px solid #374760;
+  border-right: 1px solid #586e75;
+  border-bottom: 1px solid #586e75;
   overflow: hidden;
   font-size: 14px;
-  color: #333;
+  color: #073642;
   cursor: pointer;
 }
 .question_num li:hover {
   background: #ccc;
 }
 .question_num li.active {
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
 }
 
 /*批阅界面*/
@@ -994,7 +994,7 @@
   margin: 0 auto;
   overflow: hidden;
   font-size: 13px;
-  color: #333;
+  color: #073642;
 }
 .fold_btn {
   display: block;
@@ -1006,7 +1006,7 @@
   height: 30px;
   line-height: 30px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
   font-size: 13px;
   background-color: rgba(0, 0, 0, 0.6);
   filter: progid:DXImageTransform.Microsoft.Gradient(
@@ -1023,13 +1023,13 @@
   border: 1px solid #ccc;
   float: left;
   margin-right: 10px;
-  background: #fff;
+  background: #fdf6e3;
 }
 .rate_tit {
   height: 29px;
   line-height: 29px;
   overflow: hidden;
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .rate_tit p {
   float: left;
@@ -1077,7 +1077,7 @@
   width: 50px;
   height: 20px;
   line-height: 20px;
-  background: #e4e4e4;
+  background: #fdf6e3;
   border: 1px solid #ccc;
   text-align: center;
 }
@@ -1134,7 +1134,7 @@
   height: 30px;
   line-height: 30px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
 }
 .return_btn {
   background: #990000;
@@ -1151,7 +1151,7 @@
   background: #042f5b;
 }
 .cancel_btn {
-  background: #666;
+  background: #586e75;
 }
 .cancel_btn:hover {
   background: #585656;
@@ -1196,7 +1196,7 @@
   text-align: center;
 }
 .stu_table_active {
-  background: #fff2ca;
+  background: #fdf6e32ca;
 }
 .stu_table tr td.active i {
   display: block;
@@ -1212,7 +1212,7 @@
 }
 .page_btn {
   overflow: hidden;
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .page_btn span {
   display: block;
@@ -1243,13 +1243,12 @@
 .page_btn a:hover {
   background: #d7d7d7;
 }
-
 /*新增作业*/
 .add_box {
   width: 960px;
   min-height: 800px;
   margin: 15px auto;
-  background: #fff;
+  background: #fdf6e3;
   overflow: hidden;
   zoom: 1;
   font-family: "宋体";
@@ -1257,16 +1256,16 @@
 .add_box h4 {
   height: 40px;
   line-height: 40px;
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
   font-size: 15px;
   padding-left: 30px;
 }
 .add_box_h4 {
   height: 40px;
   line-height: 40px;
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
   font-size: 15px;
   padding-left: 30px;
 }
@@ -1293,7 +1292,7 @@
   width: 65px;
   margin-right: 5px;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
 }
 .add_work_info li input[type="text"] {
   float: left;
@@ -1315,7 +1314,7 @@
   float: left;
   overflow: hidden;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
 }
 .involve_num a {
   float: right;
@@ -1325,7 +1324,7 @@
   line-height: 26px;
   text-align: center;
   background: #1e5975;
-  color: #fff;
+  color: #fdf6e3;
   font-size: 12px;
   border-radius: 3px;
 }
@@ -1341,7 +1340,7 @@
   float: left;
   margin-right: 30px;
   font-size: 13px;
-  color: #333;
+  color: #073642;
 }
 .grading_style p input {
   float: left;
@@ -1364,7 +1363,7 @@
   float: left;
   margin-right: 30px;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
 }
 .review_setting span input {
   width: 40px;
@@ -1395,13 +1394,13 @@
   width: 65px;
   margin-right: 5px;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
   font-weight: normal;
 }
 .expired_setting span {
   float: left;
   margin-right: 40px;
-  color: #333;
+  color: #073642;
   font-size: 13px;
 }
 .expired_setting span input {
@@ -1424,7 +1423,7 @@
   height: 26px;
   line-height: 26px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
   background: #1e5975;
   border-radius: 3px;
 }
@@ -1441,11 +1440,11 @@
   height: 40px;
   line-height: 40px;
   border: 1px solid #ccc;
-  background: #f2f2f2;
+  background: #eee8d5;
   overflow: hidden;
   zoom: 1;
   font-size: 14px;
-  color: #333;
+  color: #073642;
   position: relative;
 }
 .section_part p {
@@ -1499,7 +1498,7 @@
   line-height: 30px;
   padding: 0 20px;
   border-radius: 3px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .question_btn {
   background: #2f6da6;
@@ -1566,9 +1565,9 @@
 .class_select h5 {
   height: 30px;
   line-height: 30px;
-  background: #f2f2f2;
+  background: #eee8d5;
   text-align: center;
-  color: #333;
+  color: #073642;
   font-weight: normal;
 }
 .class_list {
@@ -1586,18 +1585,18 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   zoom: 1;
-  color: #333;
+  color: #073642;
 }
 .class_list li.active i {
 }
 .class_list li.active {
-  background: #475c7c;
-  color: #fff;
+  background: #b58900;
+  color: #fdf6e3;
 }
 .class_list li:hover,
 .class_list li.active {
-  background: #475c7c;
-  color: #fff;
+  background: #b58900;
+  color: #fdf6e3;
 }
 .class_list li i {
   float: left;
@@ -1625,18 +1624,18 @@
   width: 100%;
 }
 .member_table tr.active td {
-  background: #475c7c;
-  color: #fff;
+  background: #b58900;
+  color: #fdf6e3;
 }
 .member_table tr th,
 .member_table tr td {
   height: 30px;
   line-height: 30px;
-  color: #666;
+  color: #586e75;
 }
 .member_table tr th {
   text-align: left;
-  background: #f2f2f2;
+  background: #eee8d5;
   font-weight: normal;
 }
 .member_table tr td i {
@@ -1647,13 +1646,13 @@
 /*题库选题弹出框*/
 .exam_box {
   padding: 20px 0;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #ccc;
   overflow: hidden;
   zoom: 1;
 }
 .exam_filter {
-  background: #f2f2f2;
+  background: #eee8d5;
   margin-top: -20px;
   padding-bottom: 20px;
   overflow: hidden;
@@ -1670,7 +1669,7 @@
   margin-right: 10px;
   width: 50px;
   text-align: right;
-  color: #333;
+  color: #073642;
 }
 .exam_filter_box dd {
   overflow: hidden;
@@ -1682,7 +1681,7 @@
   padding-left: 5px;
   height: 25px;
   line-height: 25px;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #fdf6e3;
 }
 .select_type {
   width: 195px;
@@ -1699,7 +1698,7 @@
 .search_requirement input {
   height: 25px;
   line-height: 25px\9;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #fdf6e3;
   padding: 0 20px 0 5px;
   width: 173px;
 }
@@ -1713,7 +1712,7 @@
 }
 .show_box {
   float: right;
-  color: #333;
+  color: #073642;
 }
 .show_box select {
   float: none;
@@ -1728,15 +1727,15 @@
 }
 .label_select a:hover span,
 .label_select a.active span {
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
 }
 .label_select a span {
   display: block;
   padding: 0 15px;
   height: 27px;
   line-height: 27px;
-  color: #666;
+  color: #586e75;
 }
 .exam_table {
   width: 100%;
@@ -1746,10 +1745,10 @@
   height: 29px;
   line-height: 29px;
   border: 1px solid #ccc;
-  color: #333;
+  color: #073642;
 }
 .exam_table tr th {
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 .exam_table tr td p {
   overflow: hidden;
@@ -1783,21 +1782,20 @@
   height: 30px;
   line-height: 30px;
   border: 1px solid #ccc;
-  color: #333;
+  color: #073642;
   text-align: center;
 }
 .paper_table tr th {
   font-size: 13px;
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 .paper_table a {
-  color: #333;
+  color: #073642;
 }
 .paper_table a:hover {
   text-decoration: underline;
-  color: #333;
+  color: #073642;
 }
-
 /*新增考试*/
 .explanation_box {
   padding: 5px;
@@ -1827,7 +1825,6 @@
   width: 105px;
   margin-left: 10px;
 }
-
 /*遮罩*/
 .loading-mask {
   position: absolute;
@@ -1848,12 +1845,10 @@
   z-index: 20001;
   height: auto;
 }
-
 .loading-cancel {
   position: absolute;
   z-index: -20000;
 }
-
 /*智能组卷*/
 .note_textarea {
   width: 348px;
@@ -1866,15 +1861,15 @@
 .paper_box {
   width: 960px;
   margin: 0 auto;
-  background: #fff;
+  background: #fdf6e3;
   overflow: hidden;
   zoom: 1;
 }
 .paper_box h4 {
   height: 42px;
   line-height: 42px;
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
   padding-left: 13px;
   font-size: 15px;
   font-family: "Microsoft YaHei";
@@ -1900,7 +1895,7 @@
 .test_info p.check_input label {
   font-family: "Arial";
   font-size: 13px;
-  color: #333;
+  color: #073642;
 }
 .test_info p.check_input input {
   width: auto;
@@ -1912,7 +1907,7 @@
   float: left;
   width: 70px;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
   font-family: "Microsoft YaHei";
 }
 .test_info p input {
@@ -1922,7 +1917,7 @@
   height: 30px;
   line-height: 30px\9;
   vertical-align: middle;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #ccc;
 }
 .test_info p.paper_text {
@@ -1933,10 +1928,10 @@
   width: 815px;
   height: 50px;
   padding: 5px;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #ccc;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
   font-family: "Microsoft YaHei";
 }
 .part_box {
@@ -2004,7 +1999,7 @@
 .topic_table tr th {
   height: 40px;
   line-height: 40px;
-  background: #e4e4e4;
+  background: #fdf6e3;
   text-align: left;
   border: 1px solid #ccc;
   padding-left: 5px;
@@ -2014,7 +2009,7 @@
   height: 40px;
   vertical-align: middle;
   border: 1px solid #ccc;
-  color: #666;
+  color: #586e75;
   overflow: hidden;
   position: relative;
   padding-left: 5px;
@@ -2023,7 +2018,7 @@
   padding-left: 0;
 }
 .exam_num {
-  color: #374760;
+  color: #586e75;
 }
 .topic_table .exam_content {
   width: 245px;
@@ -2070,9 +2065,9 @@
 }
 .question_table tr th {
   border: 1px solid #ccc;
-  background: #e4e4e4;
+  background: #fdf6e3;
   font-size: 13px;
-  color: #333;
+  color: #073642;
   text-align: left;
 }
 .question_table tr td {
@@ -2080,7 +2075,7 @@
   margin-top: -1px;
   overflow: hidden;
   zoom: 1;
-  color: #666;
+  color: #586e75;
 }
 .question_filter {
   overflow: hidden;
@@ -2117,12 +2112,12 @@
   line-height: 24px;
   font-size: 12px;
   background: #999;
-  color: #fff;
+  color: #fdf6e3;
   font-weight: normal;
 }
 .form_style li.active a,
 .form_style li a:hover {
-  background: #374760;
+  background: #586e75;
 }
 .last_column {
   position: relative;
@@ -2164,10 +2159,10 @@
   height: 22px;
   line-height: 22px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
 }
 .total_btn a.save {
-  background: #374760;
+  background: #586e75;
 }
 .total_btn a.cancel {
   background: #999;
@@ -2209,7 +2204,7 @@
   position: relative;
 }
 .exam_tip p {
-  color: #374760;
+  color: #586e75;
   margin-left: 10px;
   margin-right: 50px;
   padding-right: 15px;
@@ -2232,7 +2227,6 @@
   float: right;
   margin-right: 10px;
 }
-
 /*-----答题卡------*/
 /*答题卡*/
 .answer_box {
@@ -2240,13 +2234,13 @@
   margin: 15px auto 0;
   padding-bottom: 20px;
   font-family: "Microsoft YaHei";
-  background: #fff;
+  background: #fdf6e3;
 }
 .answer_tit {
   height: 40px;
   line-height: 40px;
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
   padding-left: 15px;
 }
 .answer_tit p {
@@ -2261,8 +2255,8 @@
   width: 60px;
   height: 25px;
   line-height: 25px;
-  color: #fff;
-  background: #475c7c;
+  color: #fdf6e3;
+  background: #b58900;
   text-align: center;
   margin-top: 7px;
 }
@@ -2272,7 +2266,7 @@
 .paper_info {
   margin: 30px 0 0 30px;
   font-size: 13px;
-  color: #666;
+  color: #586e75;
   overflow: hidden;
   zoom: 1;
 }
@@ -2296,7 +2290,7 @@
   padding: 0 5px;
   height: 30px;
   line-height: 30px\9;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #cccccc;
 }
 .appliance {
@@ -2319,7 +2313,6 @@
   border: none;
   float: left;
 }
-
 .paper_descrip {
   clear: both;
   overflow: hidden;
@@ -2333,16 +2326,15 @@
   width: 803px;
   padding: 5px;
   height: 50px;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #ccc;
-  color: #666;
+  color: #586e75;
   resize: none;
   font-size: 13px;
 }
-
 .tab_box {
   margin-top: 40px;
-  border-bottom: 1px solid #374760;
+  border-bottom: 1px solid #586e75;
   overflow: hidden;
   zoom: 1;
 }
@@ -2359,18 +2351,18 @@
   display: block;
   padding: 0 25px 10px;
   font-size: 14px;
-  color: #666;
-  border-bottom: 2px solid #fff;
+  color: #586e75;
+  border-bottom: 2px solid #fdf6e3;
   font-weight: bold;
 }
 .tab_list li.active a {
-  border-bottom: 2px solid #374760;
-  color: #374760;
+  border-bottom: 2px solid #586e75;
+  color: #586e75;
 }
 .topic_select {
   height: 40px;
   line-height: 40px;
-  background: #f2f2f2;
+  background: #eee8d5;
   padding: 0 30px;
   width: 900px;
   overflow: hidden;
@@ -2381,8 +2373,8 @@
   width: 150px;
   height: 25px;
   line-height: 25px\9;
-  color: #666;
-  background: #fff;
+  color: #586e75;
+  background: #fdf6e3;
   border: 1px solid #cccccc;
 }
 .add_select {
@@ -2418,9 +2410,8 @@
   text-align: center;
   line-height: 25px;
   font-size: 13px;
-  color: #fff;
+  color: #fdf6e3;
 }
-
 .type_detail {
   width: 100%;
 }
@@ -2431,11 +2422,11 @@
   border-bottom: 1px solid #ccc;
   text-align: left;
   font-size: 13px;
-  color: #333;
+  color: #073642;
   vertical-align: top;
 }
 .type_detail tr.active td {
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .type_detail tr.active .icon_btn {
   display: block;
@@ -2445,7 +2436,7 @@
   text-align: center;
 }
 .type_name {
-  color: #475c7c;
+  color: #b58900;
   font-size: 12px;
   font-family: "宋体";
 }
@@ -2480,15 +2471,15 @@
   width: 28px;
   height: 28px;
   border: 1px solid #ccc;
-  background: #fff;
+  background: #fdf6e3;
   text-align: center;
   line-height: 28px;
   font-size: 14px;
-  color: #333;
+  color: #073642;
 }
 .option_list li.active a {
   background: #2eb165;
-  color: #fff;
+  color: #fdf6e3;
 }
 .operation_btn {
   float: left;
@@ -2502,7 +2493,7 @@
   width: 28px;
   height: 28px;
   border: 1px solid #ccc;
-  background: #f2f2f2;
+  background: #eee8d5;
   text-align: center;
   line-height: 28px;
   font-size: 19px;
@@ -2514,7 +2505,7 @@
 }
 .current_score p {
   float: left;
-  color: #333;
+  color: #073642;
 }
 .icon_btn {
   float: right;
@@ -2547,7 +2538,7 @@
   height: 28px;
   line-height: 28px\9;
   padding: 0 5px;
-  background: #fff;
+  background: #fdf6e3;
   border: 1px solid #ccc;
   color: #999;
   font-size: 12px;
@@ -2560,7 +2551,6 @@ th li a {
 th li a:hover {
   text-decoration: underline;
 }
-
 /*-----------------------新增--------------------------*/
 .examination_wrap {
   padding: 25px 35px;
@@ -2594,11 +2584,11 @@ th li a:hover {
 }
 .deadline_time {
   margin-top: 20px;
-  color: #333;
+  color: #073642;
 }
 .deadline_time b {
   font-size: 30px;
-  color: #475c7c;
+  color: #b58900;
   line-height: 50px;
 }
 .examination_info {
@@ -2612,7 +2602,7 @@ th li a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #333;
+  color: #073642;
 }
 .examination_info em {
   font-style: normal;
@@ -2627,7 +2617,7 @@ th li a:hover {
 .deadline_tip {
   line-height: 100px;
   font-size: 16px;
-  color: #666;
+  color: #586e75;
 }
 .examination_label {
   color: #ff0000;
@@ -2637,7 +2627,7 @@ th li a:hover {
   height: 20px;
   line-height: 20px;
   padding: 0 7px;
-  color: #fff;
+  color: #fdf6e3;
   background: #b32119;
   margin-left: 5px;
   position: relative;
@@ -2657,7 +2647,7 @@ th li a:hover {
 }
 .examing {
   font-size: 16px;
-  color: #666;
+  color: #586e75;
   line-height: 100px;
 }
 .examing a {
@@ -2667,18 +2657,18 @@ th li a:hover {
   line-height: 20px;
   text-align: center;
   margin-left: 15px;
-  background: #374760;
+  background: #586e75;
   font-size: 12px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .examing a:hover {
-  background: #475c7c;
+  background: #b58900;
 }
 .score_info {
   margin-top: 30px;
   font-size: 16px;
   text-align: center;
-  color: #475c7c;
+  color: #b58900;
 }
 .score_info span {
   display: block;
@@ -2703,7 +2693,7 @@ th li a:hover {
   width: 210px;
   padding: 0 5px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
   position: absolute;
   right: 0;
   top: 20px;
@@ -2729,7 +2719,7 @@ th li a:hover {
   text-align: center;
   overflow: hidden;
   font-size: 16px;
-  color: #666;
+  color: #586e75;
 }
 .not_review i {
   display: block;
@@ -2743,10 +2733,10 @@ th li a:hover {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #f2f2f2;
+  background: #eee8d5;
   border: 1px solid #ccc;
   font-size: 13px;
-  color: #333;
+  color: #073642;
   font-family: "Microsoft YaHei";
   margin: 10px 0px 0px 0px;
 }
@@ -2758,25 +2748,24 @@ th li a:hover {
   line-height: 22px;
   text-align: center;
   background: #999;
-  color: #fff;
+  color: #fdf6e3;
   cursor: pointer;
 }
-
 .appraisal_box {
   width: 151px;
   position: fixed;
   top: 68px;
   left: 50%;
   margin-left: 490px;
-  background: #666;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
 }
 .appraisal_tit {
   display: block;
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background: #333;
+  background: #073642;
 }
 .appraisal_detail {
   height: 50px;
@@ -2785,7 +2774,7 @@ th li a:hover {
 .mark_score {
   display: block;
   font-size: 20px;
-  color: #fff;
+  color: #fdf6e3;
   font-weight: bold;
   line-height: 50px;
   text-align: center;
@@ -2796,7 +2785,7 @@ th li a:hover {
 }
 .evaluation_detail b {
   font-size: 20px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .evaluation_detail2 b {
   font-size: 20px;
@@ -2827,7 +2816,7 @@ th li a:hover {
   text-align: left;
 }
 .remark_box span div {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fdf6e3;
   overflow: hidden;
 }
 .remark_boxnobottom {
@@ -2835,8 +2824,6 @@ th li a:hover {
 }
 .num_box {
   overflow: hidden;
-  border-top: 1px solid #000;
-  border-left: 1px solid #000;
 }
 .num_box li {
   float: left;
@@ -2844,25 +2831,25 @@ th li a:hover {
   height: 29px;
   line-height: 29px;
   text-align: center;
-  color: #fff;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  color: #fdf6e3;
   cursor: pointer;
 }
 .num_box li.true {
-  background: #009900;
+  background: #859900;
 }
 .num_box li.false {
-  background: #ff0000;
+  background: #dc322f;
+}
+.num_box li.default {
+  background: #93a1a1;
 }
 .num_box li.hacktrue {
   background: #ffa500;
 }
-
 .question_box {
   width: 1000px;
   margin: 0 auto;
-  background: #fff;
+  background: #fdf6e3;
   overflow: hidden;
 }
 .sheet_box {
@@ -2889,7 +2876,7 @@ th li a:hover {
   margin-bottom: 20px;
   line-height: 24px;
   font-size: 13px;
-  color: #333;
+  color: #073642;
 }
 .bottom_box {
   width: 100%;
@@ -2907,8 +2894,8 @@ th li a:hover {
   float: left;
   width: 150px;
   margin: 0 10px 0 20px;
-  color: #fff;
-  background: #666;
+  color: #fdf6e3;
+  background: #586e75;
 }
 .bottom_center {
   width: 1000px;
@@ -2921,7 +2908,7 @@ th li a:hover {
   padding: 0 15px;
   height: 196px;
   overflow: auto;
-  background: #fff;
+  background: #fdf6e3;
 }
 .sheet_list {
   margin-top: 10px;
@@ -2932,7 +2919,7 @@ th li a:hover {
   width: 70px;
   line-height: 30px;
   margin-right: 15px;
-  color: #333;
+  color: #073642;
 }
 .question_score span {
   color: #ff0000;
@@ -2948,7 +2935,7 @@ th li a:hover {
   line-height: 28px;
   text-align: center;
   font-size: 14px;
-  color: #333;
+  color: #073642;
   position: relative;
   cursor: pointer;
   margin-right: 10px;
@@ -2986,15 +2973,14 @@ th li a:hover {
 .tip_answer {
   height: 30px;
   line-height: 30px;
-  background: #f2f2f2;
+  background: #eee8d5;
   border: 1px solid #ccc;
   width: 500px;
   text-align: center;
   margin-top: 10px;
-  color: #333;
+  color: #073642;
   cursor: pointer;
 }
-
 .answers li {
   float: left;
   width: 20px;
@@ -3004,7 +2990,7 @@ th li a:hover {
   border: 1px solid #ccc;
   margin: 0 0 0 10px;
   position: relative;
-  color: #333;
+  color: #073642;
   cursor: pointer;
 }
 .answers li i {
@@ -3048,20 +3034,20 @@ th li a:hover {
 }
 .stu_list li.active,
 .stu_list li:hover {
-  background: #fff2ca;
+  background: #fdf6e32ca;
 }
 .stu_list li.active i {
   display: block;
 }
-/*.solution_tip{ width:520px;overflow-x: hidden;overflow-y: auto; height:100px; line-height:100px; border:1px solid #ccc; background:#f2f2f2; text-align:center; color:#333;}*/
+/*.solution_tip{ width:520px;overflow-x: hidden;overflow-y: auto; height:100px; line-height:100px; border:1px solid #ccc; background:#eee8d5; text-align:center; color:#073642;}*/
 .solution_tip {
   width: 520px;
   overflow-x: hidden;
   overflow-y: auto;
   height: 100px;
   border: 1px solid #ccc;
-  background: #f2f2f2;
-  color: #333;
+  background: #eee8d5;
+  color: #073642;
   padding: 5px;
 }
 .solution_box {
@@ -3078,14 +3064,13 @@ th li a:hover {
 }
 .answer_tab li.active,
 .answer_tab li:hover {
-  background: #475c7c;
-  color: #ffffff;
+  background: #b58900;
+  color: #fdf6e3fff;
 }
-
 .label_box {
   overflow: hidden;
   margin-top: 10px;
-  color: #333;
+  color: #073642;
   line-height: 30px;
 }
 .label_box b {
@@ -3112,7 +3097,6 @@ th li a:hover {
   border: 1px solid #ccc;
   resize: none;
 }
-
 .bottom_bg {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -3145,13 +3129,13 @@ th li a:hover {
   line-height: 25px;
   background: #393b3c;
   font-size: 13px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .complete_box b {
   display: block;
   height: 55px;
   line-height: 55px;
-  color: #fff;
+  color: #fdf6e3;
   font-size: 16px;
 }
 .question_rank {
@@ -3159,18 +3143,17 @@ th li a:hover {
 }
 .complete_box p {
   font-size: 13px;
-  color: #fff;
+  color: #fdf6e3;
   text-align: right;
   padding-right: 5px;
   margin: 5px 0;
 }
-
 .topic_box {
   width: 600px;
   margin: 10px 20px 0 0;
   padding: 0 15px;
   float: left;
-  background: #fff;
+  background: #fdf6e3;
   height: 190px;
   overflow: auto;
 }
@@ -3195,13 +3178,13 @@ th li a:hover {
   line-height: 28px;
   text-align: center;
   border: 1px solid #ccc;
-  color: #333;
+  color: #073642;
   cursor: pointer;
 }
 .topic_option li.active,
 .topic_option li:hover {
   background: #ccc;
-  color: #fff;
+  color: #fdf6e3;
 }
 .subjective_box {
   width: 525px;
@@ -3228,7 +3211,6 @@ th li a:hover {
   top: 10px;
   cursor: pointer;
 }
-
 .btn_answer {
   float: left;
 }
@@ -3238,7 +3220,7 @@ th li a:hover {
   height: 30px;
   line-height: 30px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
   background: #525354;
   margin-top: 10px;
   font-size: 13px;
@@ -3257,20 +3239,18 @@ th li a:hover {
   height: 25px;
   line-height: 25px;
   font-size: 13px;
-  color: #fff;
+  color: #fdf6e3;
   background: #393b3c;
 }
 .time_remain b {
   display: block;
   margin-top: 20px;
   font-size: 16px;
-  color: #fff;
+  color: #fdf6e3;
 }
 .question_number {
-  border-top: 1px solid #797979;
-  border-left: 1px solid #797979;
   overflow: hidden;
-  background: #fff;
+  background: #fdf6e3;
 }
 .question_number li {
   float: left;
@@ -3278,8 +3258,6 @@ th li a:hover {
   height: 23px;
   line-height: 23px;
   text-align: center;
-  border-right: 1px solid #797979;
-  border-bottom: 1px solid #797979;
 }
 .question_number li.active {
   background-color: #ccc;
@@ -3297,9 +3275,8 @@ th li a:hover {
   margin-bottom: 20px;
   line-height: 24px;
   font-size: 13px;
-  color: #333;
+  color: #073642;
 }
-
 .evaluation_box2 {
   width: 1200px;
 }
@@ -3312,11 +3289,9 @@ th li a:hover {
 .evaluation_box2 .stu_box {
   width: 238px;
 }
-
 .absolute {
   position: absolute;
 }
-
 .work_label {
   display: block;
   overflow: hidden;
@@ -3324,7 +3299,7 @@ th li a:hover {
   height: 20px;
   line-height: 20px;
   text-align: center;
-  color: #fff;
+  color: #fdf6e3;
   border-radius: 3px;
   position: relative;
   left: 10px;
@@ -3338,7 +3313,6 @@ th li a:hover {
 .label_exam {
   background: #f83107;
 }
-
 /*习题序号*/
 .serialNo {
   font: italic 1em Georgia, Times, serif;
@@ -3346,7 +3320,6 @@ th li a:hover {
   font-size: 16px;
   margin-right: 5px;
 }
-
 /* 1217 */
 .icon_tip {
   display: block;
@@ -3356,7 +3329,7 @@ th li a:hover {
   cursor: pointer;
 }
 .tip_pop {
-  background: #fff;
+  background: #fdf6e3;
   position: absolute;
   display: none;
 }
@@ -3380,10 +3353,10 @@ th li a:hover {
   text-align: center;
 }
 .tb-tip td {
-  background: #fff;
+  background: #fdf6e3;
 }
 .tb-tip th {
-  background: #e4e4e4;
+  background: #fdf6e3;
 }
 .tip_pop.wid210 {
   width: 210px;
@@ -3391,7 +3364,6 @@ th li a:hover {
 .tip_pop.wid280 {
   width: 280px;
 }
-
 .progress_box {
   position: relative;
   cursor: default;
@@ -3411,7 +3383,6 @@ th li a:hover {
 .progress_box .tip_pop.wid280 {
   margin-top: -20px;
 }
-
 .score_div {
   position: relative;
   cursor: default;
@@ -3422,14 +3393,13 @@ th li a:hover {
   right: 35px;
 }
 .score_div .tip_pop {
-  background: #fff;
+  background: #fdf6e3;
   position: absolute;
   top: 35px;
   left: 50%;
   z-index: 2;
   display: none;
 }
-
 .score_div .tb-tip th {
   text-align: center;
 }
@@ -3445,7 +3415,6 @@ th li a:hover {
 .every_failedcolor {
   color: #ff0000;
 }
-
 /* 作业相似度检查 */
 .green {
   color: #18876f;
@@ -3462,30 +3431,29 @@ th li a:hover {
 /* 右侧 */
 .admin_nav_box {
   height: 55px;
-  background: #374760;
+  background: #586e75;
   overflow: hidden;
   zoom: 1;
 }
 .crumbs_box {
   line-height: 55px;
-  color: #fff;
+  color: #fdf6e3;
   margin-left: 15px;
   font-size: 13px;
 }
 /* 筛选 */
 .sousuo_box {
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .filter_item {
   padding: 7px 24px;
   height: 26px;
   border-bottom: 1px solid #ccc;
-  background: #f2f2f2;
+  background: #eee8d5;
 }
-
 .screen_btn {
   float: right;
-  color: #374760;
+  color: #586e75;
   line-height: 26px;
   margin-left: 10px;
 }
@@ -3509,7 +3477,7 @@ th li a:hover {
   overflow: hidden;
   zoom: 1;
   border: 1px solid #ccc;
-  background: #fff;
+  background: #fdf6e3;
 }
 .search_btn input {
   width: 160px;
@@ -3517,7 +3485,7 @@ th li a:hover {
   line-height: 24px\9;
   padding: 0 5px;
   border: 0;
-  background: #fff;
+  background: #fdf6e3;
 }
 .search_btn .search_icon {
   cursor: pointer;
@@ -3548,7 +3516,7 @@ th li a:hover {
   float: left;
   width: 50px;
   margin-right: 15px;
-  color: #666;
+  color: #586e75;
   line-height: 27px;
 }
 .requirement_box dd {
@@ -3556,7 +3524,6 @@ th li a:hover {
   zoom: 1;
   position: relative;
 }
-
 .select_require {
   overflow: hidden;
 }
@@ -3569,18 +3536,18 @@ th li a:hover {
   display: block;
   height: 27px;
   line-height: 27px;
-  color: #666;
+  color: #586e75;
   padding: 0 13px;
 }
 .select_require span a:hover,
 .select_require span.active a {
-  background: #374760;
-  color: #fff;
+  background: #586e75;
+  color: #fdf6e3;
 }
 .select_require .num {
   float: left;
   line-height: 27px;
-  color: #666;
+  color: #586e75;
   margin-left: 5px;
   font-size: 12px;
 }
@@ -3595,9 +3562,9 @@ th li a:hover {
 .select_require .btn {
   width: 50px;
   height: 27px;
-  color: #fff;
+  color: #fdf6e3;
   border: 0;
-  background: #475c7c;
+  background: #b58900;
   cursor: pointer;
   font-size: 12px;
   float: left;
@@ -3612,16 +3579,16 @@ th li a:hover {
   padding: 10px 15px 8px 20px;
   height: 25px;
   line-height: 25px;
-  border-bottom: 1px solid #374760;
+  border-bottom: 1px solid #586e75;
 }
 .result_tit h4 {
   float: left;
   height: 25px;
   line-height: 25px;
   padding-bottom: 6px;
-  border-bottom: 3px solid #374760;
+  border-bottom: 3px solid #586e75;
   font-size: 16px;
-  color: #333;
+  color: #073642;
 }
 .result_tit h4 span {
   color: #999;
@@ -3650,7 +3617,7 @@ th li a:hover {
   float: left;
 }
 .batch_btn1 span {
-  color: #fff;
+  color: #fdf6e3;
   float: left;
   display: block;
   width: 80px;
@@ -3669,7 +3636,7 @@ th li a:hover {
 .tb-list td {
   height: 40px;
   line-height: 40px;
-  color: #333;
+  color: #073642;
 }
 .tb-list th {
   text-align: left;
@@ -3688,7 +3655,7 @@ th li a:hover {
   background: url(../Images/16icon_up_green.png) no-repeat;
 }
 .tb-list .trbg {
-  background: #f2f2f2;
+  background: #eee8d5;
 }
 .tb-list a:hover {
   text-decoration: underline;
@@ -3700,18 +3667,16 @@ th li a:hover {
 .page_box {
   padding: 20px 0;
 }
-
 .work_tit_div {
 }
 .work_tit_div span {
   margin-left: 2px;
   float: left;
 }
-
 /*zxy*/
 .hupingDetail {
   float: left;
-  background: #fff;
+  background: #fdf6e3;
   width: 800px;
   display: none;
   border: 1px solid #ccc;
@@ -3724,7 +3689,7 @@ th li a:hover {
 }
 .hupingHead span {
   font-size: 16px;
-  color: #fff;
+  color: #fdf6e3;
   padding-left: 20px;
   font-weight: bold;
   line-height: 40px;
@@ -3773,7 +3738,7 @@ th li a:hover {
   border-top: 1px solid #ccc;
 }
 .huping_a {
-  color: #333;
+  color: #073642;
 }
 .huping_a:hover {
   text-decoration: underline;
@@ -3819,17 +3784,16 @@ th li a:hover {
 }
 .commet_head label {
   line-height: 30px;
-  color: #333;
+  color: #073642;
   float: left;
 }
 .commet_conton {
-  background: #fff;
+  background: #fdf6e3;
   width: 750px;
   padding: 0 5px;
   height: 90px;
   float: left;
 }
-
 .everywork-b {
   font-weight: bold;
 }

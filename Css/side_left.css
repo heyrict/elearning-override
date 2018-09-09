@@ -1,0 +1,137 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.side_left {
+  width: 200px;
+  float: left;
+  font-family: "Microsoft YaHei";
+  background: #586e75;
+  margin-bottom: -10000px;
+  padding-bottom: 10000px;
+}
+.user {
+  position: relative;
+  background: #586e75;
+  padding: 13px 0 18px;
+}
+.user img {
+  display: block;
+  margin: 0 auto;
+}
+.user a {
+  display: block;
+}
+.user a:hover {
+  text-decoration: none;
+}
+.teacher_name {
+  font-size: 20px;
+  color: #fdf6e3;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+.switch_btn {
+  width: 90px;
+  padding: 0 15px;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  color: #fdf6e3;
+  background: #f44f4f;
+  position: relative;
+}
+.switch_btn:hover {
+  background: #dc322f;
+}
+.switch_btn .icon_arrow {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-position: -174px 0;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+.icon_user {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: 0 0;
+  position: absolute;
+  top: 13px;
+  left: 15px;
+}
+.side_box {
+  margin-top: 30px;
+  overflow: hidden;
+  zoom: 1;
+}
+.side_nav {
+  height: 200px;
+  overflow: hidden;
+  zoom: 1;
+  background: url(../Images/menuLineBg.png) repeat-y;
+}
+.exercise .side_nav {
+  height: auto;
+}
+.side_nav li {
+}
+.side_nav li.active,
+.side_nav li:hover {
+  background: #2a3950;
+}
+.side_nav li.active a,
+.side_nav li:hover a {
+  border-left: 7px solid #268bd2;
+  background: #073642;
+  color: #fdf6e3;
+}
+.side_nav li a {
+  display: block;
+  height: 39px;
+  line-height: 39px;
+  border-left: 7px solid #2a394e;
+  padding-left: 60px;
+  padding-bottom: 2px;
+  margin-top: -1px;
+  font-size: 14px;
+  color: #eee8d5;
+  font-weight: bold;
+  background: #586e75;
+}
+.side_nav li a:hover {
+  text-decoration: none;
+}
+.more_tool {
+  display: block;
+  width: 140px;
+  margin: 20px 0 0 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #2a3950;
+  color: #a4b6d2;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+}
+.more_tool:hover {
+  text-decoration: none;
+  color: #fdf6e3;
+}
+.more_tool i.icon_more {
+  background-position: 0 -52px;
+}
+.more_tool i.icon_less {
+  background-position: 0 -66px;
+}
+.more_tool i {
+  display: inline-block;
+  margin-left: 5px;
+  width: 16px;
+  height: 13px;
+}

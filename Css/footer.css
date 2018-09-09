@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共底部*/
+.footer{ width:1200px; margin:15px auto 0; overflow:hidden; zoom:1;height:30px; line-height:30px; color:#fff;font-family:'Microsoft YaHei';}
+.copyright{ float:left; overflow:hidden; zoom:1; font-size:13px; }
+.copyright img{ display:block; float:left; margin-right:13px;}
+.company_info{ float:right;font-size:12px; }
+.company_info a{ color:#fff; padding:0 5px;}
+.company_info a:hover{ text-decoration:underline;}
