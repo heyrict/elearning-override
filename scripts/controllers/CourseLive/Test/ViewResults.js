@@ -5,6 +5,11 @@ ViewResultsModule.controller("ViewResultsController", [
   "$state",
   "MarkingProviderUrl",
   function($scope, $state, MarkingProviderUrl) {
+    $scope._hack_remain_open = true;
+    $scope.HackToggleRemain = () => {
+      $scope._hack_remain_open = !$scope._hack_remain_open;
+    };
+
     $scope.testid = $G2S.request("TestID");
     $scope.exercisecount = 0;
     $scope.GroupIDS = ""; //获取所有分组id
@@ -192,7 +197,7 @@ ViewResultsModule.controller("ViewResultsController", [
         $scope.yanchengji = 0;
         if ($scope.TestUsers.IsDelay == 1 && $scope.test.Delay == 3) {
           $scope.yanchengji = $scope.AllScore;
-          var zhekou = $scope.AllScore * $scope.test.DelayScoreDiscount / 100;
+          var zhekou = ($scope.AllScore * $scope.test.DelayScoreDiscount) / 100;
           zhekou = zhekou.toFixed(1);
           $scope.AllScore = $scope.AllScore - zhekou;
         } else {

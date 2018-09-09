@@ -89,7 +89,6 @@
   margin-top: -30px;
   overflow: hidden;
   zoom: 1;
-  width: 950px;
 }
 .work_list {
   padding-top: 30px;
@@ -137,7 +136,6 @@
 }
 .work_detail {
   float: left;
-  width: 400px;
   font-family: "宋体";
 }
 .work_tit {
@@ -453,7 +451,6 @@
   background: #fdf6e3;
 }
 .work_paper {
-  width: 960px;
   min-height: 640px;
   margin: 15px auto 0;
   background: #fdf6e3;
@@ -928,16 +925,38 @@
   color: #fdf6e3;
   position: fixed;
   top: 68px;
-  left: 50%;
-  margin-left: 490px;
+  bottom: 20px;
   z-index: 9;
-  overflow: hidden;
+  overflow-y: auto;
+  display: none;
+}
+.remain_box_toggle_button {
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  height: 20px;
+  width: 50px;
+  color: #fcf4dc;
+  background: #268bd2;
+  text-align: center;
+  padding: 1px;
+  border-radius: 5px;
+}
+.remain_box_open {
+  display: block;
+  right: 0;
+}
+.remain_box_close {
+  display: block;
+  left: 100%;
 }
 .remain_tit {
   display: block;
   height: 30px;
   line-height: 30px;
   background: #073642;
+
   text-align: center;
 }
 .time_box {
@@ -2782,7 +2801,7 @@ th li a:hover {
 .evaluation_detail {
   line-height: 50px;
   text-align: center;
-}
+}
 .evaluation_detail b {
   font-size: 20px;
   color: #fdf6e3;
@@ -3278,7 +3297,7 @@ th li a:hover {
   color: #073642;
 }
 .evaluation_box2 {
-  width: 1200px;
+  width: 100%;
 }
 .evaluation_box2 .rate_box {
   width: 568px;

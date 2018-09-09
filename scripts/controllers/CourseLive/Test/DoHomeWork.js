@@ -17,6 +17,11 @@ DoHomeWorkModule.controller("DoHomeWorkController", [
     $scope.testCanSubmit = false; //此份作业可以提交
     $scope.iCanSubmit = false; //学生是否可以提交
     $scope.isLoad = false; //学生答案是否已经加载完成
+    $scope._hack_remain_open = true;
+
+    $scope.HackToggleRemain = () => {
+      $scope._hack_remain_open = !$scope._hack_remain_open;
+    };
 
     var int_id;
     var surplusmiao = 0;

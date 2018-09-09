@@ -624,7 +624,10 @@
        </div>
       </div>
      </div>
-     <div class="remain_box">
+     <span ng-click="HackToggleRemain()" class="remain_box_toggle_button">
+       Toggle
+     </span>
+     <div class="remain_box" ng-class="{remain_box_open:_hack_remain_open, remain_box_close:!_hack_remain_open}">
       <span class="remain_tit">
        剩余时间（时分）
       </span>

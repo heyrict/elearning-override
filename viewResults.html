@@ -597,10 +597,13 @@
        </div>
       </div>
      </div>
-     <div class="appraisal_box">
-      <span class="appraisal_tit" ng-bind-template="得分（满分{{paper.Score}}）">
+     <span ng-click="HackToggleRemain()" class="remain_box_toggle_button">
+       Toggle
+     </span>
+     <div class="remain_box" ng-class="{remain_box_open:_hack_remain_open, remain_box_close:!_hack_remain_open}">
+      <span class="remain_tit" ng-bind-template="得分（满分{{paper.Score}}）">
       </span>
-      <div class="appraisal_detail">
+      <div class="remain_detail">
        <div class="evaluation_detail evaluation_detail2">
         <b ng-bind-template="{{AllScore}}">
         </b>
@@ -612,10 +615,10 @@
         </span>
        </div>
       </div>
-      <span class="appraisal_tit">
+      <span class="remain_tit">
        总评语
       </span>
-      <div class="appraisal_detail">
+      <div class="remain_detail">
        <div class="evaluation_detail">
         <b ng-bind-template="{{Evaluatevalue}}">
         </b>

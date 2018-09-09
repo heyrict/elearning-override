@@ -203,7 +203,6 @@ body {
   position: relative;
 }
 .main_all {
-  width: 1200px;
   min-height: 800px;
   overflow: hidden;
   zoom: 1;
@@ -214,7 +213,6 @@ body {
   float: left;
   overflow: hidden;
   zoom: 1;
-  width: 1000px;
   margin-bottom: -10000px;
   padding-bottom: 10000px;
   background: #fdf6e3;
@@ -224,7 +222,6 @@ body {
   float: right;
   overflow: hidden;
   zoom: 1;
-  width: 1000px;
   margin-bottom: -10000px;
   padding-bottom: 10000px;
   background: #fdf6e3;
@@ -259,7 +256,6 @@ body {
 }
 .notice_box {
   float: left;
-  width: 900px;
   overflow: hidden;
   zoom: 1;
 }
@@ -271,7 +267,6 @@ body {
 }
 .notice_list li {
   display: none;
-  width: 640px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -282,13 +277,13 @@ body {
 }
 .notice_list li i {
   background-position: 0 -34px;
+
   position: absolute;
   left: 0;
   top: 13px;
 }
 
 .notice_list li {
-  width: 775px;
 }
 .notice_list li p {
   position: absolute;
@@ -664,6 +659,7 @@ body {
   color: #fdf6e3;
   text-align: center;
   line-height: 22px;
+
   background: #b58900;
   position: relative;
 }
