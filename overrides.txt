@@ -1,0 +1,11 @@
+*/G2S/scripts/controllers/CourseLive/Test/DoHomeWork.js, ./scripts/controllers/CourseLive/Test/DoHomeWork.js
+*/G2S/scripts/controllers/CourseLive/Test/ViewResults.js, ./scripts/controllers/CourseLive/Test/ViewResults.js
+*/G2S/Css/test.css, ./Css/test.css
+*/G2S/Css/header.css, ./Css/header.css
+*/G2S/Css/footer.css, ./Css/footer.css
+*/G2S/Css/common.css, ./Css/common.css
+*/G2S/Css/home.css, ./Css/home.css
+*/G2S/Css/side_left.css, ./Css/side_left.css
+*/G2S/Css/student.css, ./Css/student.css
+*/G2S/CourseLive/Test/viewResults**, ./viewResults.html
+*/G2S/CourseLive/Test/DoHomeWork**, ./DoHomeWork.html
