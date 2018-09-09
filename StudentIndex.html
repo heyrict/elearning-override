@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="homeApp">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="webkit" name="renderer"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   课程中心4.0
+  </title>
+  <meta name="description"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <!--[if lte IE 8]>
+       <script>
+         document.createElement('ng-include');
+         document.createElement('ng-pluralize');
+         document.createElement('ng-view');
+        document.createElement('ies-file-uploader');
+         // Optionally these for CSS
+         document.createElement('ng:include');
+         document.createElement('ng:pluralize');
+         document.createElement('ng:view');
+       </script>
+     <![endif]-->
+  <link href="/G2S/Css/footer.css" rel="stylesheet"/>
+  <link href="/G2S/Css/header.css" rel="stylesheet"/>
+  <link href="/G2S/Css/side_left.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/G2S/Css/common.css" rel="stylesheet"/>
+  <link href="/G2S/Css/ico.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/laypage/skin/laypage.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/laydate/need/laydate.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/laydate/skins/default/laydate.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/laydate/skins/molv/laydate.css" rel="stylesheet"/>
+  <link href="/G2S/Frameworks/isteven-multi-select/isteven-multi-select.css" rel="stylesheet"/>
+  <link href="/G2S/Css/face.css" rel="stylesheet"/>
+  <link href="/G2S/Css/home.css" rel="stylesheet"/>
+  <script>
+   //应用程序根目录-->  结果('/')||('/g2s')
+        window.appPatch = "/G2S" == "/" ? "" : "/G2S";
+  </script>
+ </head>
+ <body id="myBody">
+  <div class="wrap">
+   <div class="public_header" id="topest">
+    <div class="header_center">
+     <div>
+      <a class="company_logo" href="/portal/CC/Index.aspx" target="_blank">
+       南京医科大学
+      </a>
+     </div>
+     <div class="user_box">
+      <div class="user_name">
+       <a class="username_a" href="/G2S/User/Account?leftmenu=D3">
+        <span class="user_sp_img">
+         <img height="20" width="20"/>
+        </span>
+        <span class="user_sp_name">
+         用户
+        </span>
+       </a>
+       <span class="togArrowWrap">
+        <em class="userInfo_arrow">
+        </em>
+       </span>
+      </div>
+      <ul class="user_info">
+       <li>
+        <a href="/G2S/User/Account?leftmenu=D1" target="_self">
+         帐号管理
+        </a>
+       </li>
+       <li>
+        <a href="/G2S/User/Msg?leftmenu=D2" target="_self">
+         消息中心
+        </a>
+       </li>
+       <li>
+        <a href="/G2S/User/AddressBook?leftmenu=D3" target="_self">
+         通讯录
+        </a>
+       </li>
+       <li>
+        <a href="/G2S/Redir/default.aspx?leftmenu=D4" target="_self">
+         返回主页
+        </a>
+       </li>
+       <li>
+        <a href="/G2S/logout.ashx?leftmenu=D5" target="_self">
+         退出系统
+        </a>
+       </li>
+      </ul>
+     </div>
+     <ul class="nav_box">
+      <li>
+       <a href="/G2S/Redir/default.aspx" target="_self">
+        返回首页
+       </a>
+      </li>
+      <li class="active">
+       <a href="/G2S/Redir/CS.aspx?topmenu=C1" target="_self">
+        课程学习
+       </a>
+      </li>
+      <li>
+       <a href="/G2S/Redir/Resource.aspx?topmenu=C2" target="_self">
+        我的资源
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="main_all">
+    <div class="main_contentright">
+     <!--右侧头部公告开始-->
+     <div class="right_header">
+      <p class="freshman">
+       <i class="icon icon_question">
+       </i>
+       <a href="/G2S/Views/Help/index" target="_blank">
+        新手向导
+       </a>
+      </p>
+      <div class="notice_box">
+       <ul class="notice_list">
+       </ul>
+       <div class="notice_btn">
+        <a class="icon prev_btn" href="javascript:;">
+        </a>
+        <a class="icon next_btn" href="javascript:;">
+        </a>
+       </div>
+      </div>
+     </div>
+     <!--右侧头部公告结束-->
+     <div class="core_content">
+      <div data-tmpl-url="/views/Home/StudentIndex" id="ui-view">
+       <link href="/G2S/Css/home.css" rel="stylesheet"/>
+       <link href="/G2S/Css/student.css" rel="stylesheet"/>
+       <div ng-controller="StudentController">
+        <div class="course_nav">
+         <ul class="course_arrange">
+          <li ng-class="{true: 'active', false: ''}[StudentOC.IsHistroy==0]">
+           <a href="javascript:;" ng-click="ChangeHistroyTab(0)">
+            学习中
+           </a>
+          </li>
+          <li ng-class="{true: 'active', false: ''}[StudentOC.IsHistroy==1]">
+           <a href="javascript:;" ng-click="ChangeHistroyTab(1)">
+            历史课程
+           </a>
+          </li>
+          <li class="ng-cloak" ng-hide="true">
+           <a href="MyCourse" target="_self">
+            我的课表
+           </a>
+          </li>
+         </ul>
+         <a class="creat_course" href="javascript:;" ng-hide="true" target="_self">
+          +我要选课
+         </a>
+        </div>
+        <div ng-class="{true: 'study_box2', false: 'study_box'}[IsShowTeacherSpace==true]" ng-show="StudentOC.IsHistroy==0">
+         <div class="ng-cloak" ng-if="IsShowTeacherSpace==false">
+          <div class="learn_box">
+           <ul class="learn_list">
+            <li class="ng-cloak" ng-repeat="myOC in OnLineList|studentOCListFilter:'between':PageIndex:'3'" ng-show="OnLineList.length&gt;0">
+             <div class="img_box">
+              <img height="120" ng-click="GoOnLing(myOC)" src='{{myOC.ImgFileUrl==null ? "../Images/default/Course_M.jpg":myOC.ImgFileUrl}}' style="cursor:pointer" title="{{myOC.Name}}" width="220"/>
+              <p>
+               <span ng-bind="myOC.Name">
+               </span>
+               <a class="icon home_icon" href="../site/preview#/home/v?currentoc={{myOC.OCID}}" ng-show="myOC.IsHasSite" target="_blank">
+               </a>
+              </p>
+             </div>
+             <div class="lecture_box">
+              <ul class="lecture_nav">
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==1]" ng-click="ChangeTab(myOC,1)">
+                关于课程
+               </li>
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==2]" ng-click="ChangeTab(myOC,2)" ng-show="myOC.IsShowMooc">
+                MOOC
+               </li>
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==3]" ng-click="ChangeTab(myOC,3)" ng-show="myOC.IsShowFC &amp;&amp; configFZKT">
+                翻转课堂
+               </li>
+              </ul>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==1]">
+               <div class="about_box">
+                <span>
+                 <i class="icon user_icon">
+                 </i>
+                 {{myOC.TeacherName}}
+                </span>
+                <span>
+                 <i class="icon class_icon">
+                 </i>
+                 {{myOC.TeachingClassName}}
+                </span>
+                <p class="about_btn">
+                 <a class="discuss_btn" href="../CourseLive/Forum/index?currentoc={{myOC.OCID}}" target="_blank">
+                  讨论
+                 </a>
+                 <a class="work_btn" href="../CourseLive/Test/StudentWorkList?currentoc={{myOC.OCID}}" target="_blank">
+                  作业
+                 </a>
+                 <a class="note_btn" href="#?currentoc={{myOC.OCID}}" ng-hide="true" target="_self">
+                  笔记
+                 </a>
+                </p>
+               </div>
+              </div>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==2]" ng-show="myOC.IsShowMooc">
+               <div class="mooc_box">
+                <p class="text_explanation1" ng-click="GoToMyMoocFC(myOC,2)">
+                 我的进度：{{myOC.MyMoocRate}}%
+                </p>
+                <div class="bar_box bar_box2">
+                 <p class="standard_box" ng-style="set_Style(myOC.PlanMoocRate)">
+                  <span>
+                  </span>
+                 </p>
+                 <p class="mine_progress" ng-style="set_Style(myOC.MyMoocRate)">
+                  <span>
+                  </span>
+                 </p>
+                </div>
+                <p class="text_explanation2">
+                 标准进度：{{myOC.PlanMoocRate}}%
+                </p>
+               </div>
+              </div>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==3]" ng-show="myOC.IsShowFC">
+               <p class="label_box">
+                <span class="mine_label" ng-click="GoToMyMoocFC(myOC,3)">
+                 我的进度：{{myOC.MyFCRate}}%
+                </span>
+               </p>
+               <div class="mooc_box">
+                <div class="bar_box bar_box2">
+                 <p class="mine_progress" ng-style="set_Style(myOC.MyFCRate)">
+                  <span>
+                  </span>
+                 </p>
+                </div>
+                <p class="text_explanation2">
+                 进行中：{{myOC.InFCCount}} 已结束：{{myOC.FinishFCCount}}
+                </p>
+               </div>
+              </div>
+             </div>
+            </li>
+           </ul>
+          </div>
+          <span class="arrow_l" ng-click="GetPageList(0,0)">
+          </span>
+          <span class="arrow_r" ng-click="GetPageList(1,0)">
+          </span>
+          <ul class="list" style="right:auto;left:50%;margin-left:-24px;">
+           <li ng-class="{true: 'active', false: ''}[num==PageIndex]" ng-click="JumpPage(num,0)" ng-repeat="num in OnLinePagesNumList" style="cursor:pointer">
+           </li>
+          </ul>
+         </div>
+         <div ng-if="IsShowTeacherSpace==true">
+          <div class="switch_box">
+           <ul class="switch_list">
+            <li ng-class="{true: 'active', false: ''}[num==PageIndex]" ng-click="JumpPage(num,0)" ng-repeat="num in OnLinePagesNumList" style="cursor:pointer">
+            </li>
+           </ul>
+           <div class="course_switch">
+            <ul class="course_list">
+             <li class="ng-cloak" ng-repeat="oc in OnLineList|studentOCListFilter:'between':PageIndex:'2'" ng-show="OnLineList.length&gt;0" on-get-my-oc-list="">
+              <div class="img_tit">
+               <img height="150" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl!=null&amp;&amp;oc.ImgFileUrl.length&gt;0" src="{{oc.ImgFileUrl}}" style="cursor:pointer" title="{{oc.Name}}" width="280"/>
+               <img height="150" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl==null||oc.ImgFileUrl.length&lt;=0" src="../Images/default/Course_M.jpg" style="cursor:pointer" title="{{oc.Name}}" width="280"/>
+               <div class="course_intro">
+                <h4 title="{{oc.Name}}">
+                 <div class="strTitle" ng-bind="oc.Name" style="width:210px;height:40px">
+                 </div>
+                </h4>
+                <div ng-bind="(oc.MyMoocRate&lt;0?'0':oc.MyMoocRate)+'%'" ng-if="oc.IsShowMooc" style="float:right;color:white">
+                </div>
+                <div class="micro_intro ng-cloak" ng-if="oc.IsMicro==1" style="height:86px;">
+                 <img src="/G2S/Images/micro_Top_icon.png"/>
+                </div>
+               </div>
+              </div>
+              <ul class="icon_list">
+               <li ng-show="oc.IsShowFC &amp;&amp; configFZKT" title=" 翻转课堂">
+                <a href="../OC/FC/Student/FCStudentIndex?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 fanzhuan">
+                 </i>
+                 翻转课堂
+                </a>
+               </li>
+               <li ng-if="oc.IsHasSite==1&amp;&amp;oc.IsMicro==0" title="网站">
+                <a href="../site/preview#/home/v?currentoc={{oc.OCID}}" target="_blank">
+                 <i class="icon_24 site">
+                 </i>
+                 网站
+                </a>
+               </li>
+               <li ng-if="oc.IsShowMooc&amp;&amp;oc.IsMicro==0" title="在线视频学习">
+                <a href="javascript:;" ng-click="StudyMOOC(oc)">
+                 <i class="icon_24 mooc">
+                 </i>
+                 学习
+                </a>
+               </li>
+               <li ng-show="oc.IsShowMooc&amp;&amp;oc.IsMicro==1 &amp;&amp; configWK" title="微课">
+                <a href="../OC/MOOC/Preview?OCID={{oc.OCID}}" target="_blank">
+                 <i class="icon_24 micro" style="width:30px;height:25px;background:url(../Images/micro_icon.png) no-repeat;">
+                 </i>
+                 微课
+                </a>
+               </li>
+               <li title="讨论">
+                <a href="../CourseLive/Forum/index?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 team">
+                 </i>
+                 讨论
+                </a>
+               </li>
+               <li title="作业">
+                <a href="../CourseLive/Test/StudentWorkList?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 zxy_work">
+                 </i>
+                 作业
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </div>
+           <a class="icon course_prev" href="javascript:;" ng-click="GetPageList(0,0)">
+           </a>
+           <a class="icon course_next" href="javascript:;" ng-click="GetPageList(1,0)">
+           </a>
+          </div>
+          <div>
+           <a class="shouqi" href="javascript:;" id="ShowCourse" ng-click="SlideCourse()">
+            展开全部课程↓
+           </a>
+          </div>
+          <ul class="course_all ng-cloak" ng-show="ShowCourse">
+           <li ng-repeat="oc in OnLineList">
+            <a class="course_img">
+             <img height="65" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl!=null&amp;&amp;oc.ImgFileUrl.length&gt;0" src="{{oc.ImgFileUrl}}" style="cursor:pointer" title="{{oc.Name}}" width="120"/>
+             <img height="65" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl==null||oc.ImgFileUrl.length&lt;=0" src="../Images/default/Course_S.jpg" style="cursor:pointer" title="{{oc.Name}}" width="120"/>
+            </a>
+            <p ng-bind="oc.Name" title="{{oc.Name}}">
+            </p>
+            <ul class="small_icon">
+             <li ng-show="oc.IsShowFC &amp;&amp; configFZKT" title=" 翻转课堂">
+              <a href="../OC/FC/Student/FCStudentIndex?currentoc={{oc.OCID}}" target="_self">
+               <i class="icon small_fz">
+               </i>
+               翻转课堂
+              </a>
+             </li>
+             <li ng-if="oc.IsHasSite==1&amp;&amp;oc.IsMicro==0" title="网站">
+              <a href="../site/preview#/home/v?currentoc={{oc.OCID}}" target="_blank">
+               <i class="icon small_site">
+               </i>
+               网站
+              </a>
+             </li>
+             <li ng-if="oc.IsShowMooc&amp;&amp;oc.IsMicro==0" title="在线视频学习">
+              <a href="javascript:;" ng-click="StudyMOOC(oc)">
+               <i class="icon small_mooc">
+               </i>
+               学习
+              </a>
+             </li>
+             <li ng-show="oc.IsShowMooc&amp;&amp;oc.IsMicro==1 &amp;&amp; configWK" title="微课">
+              <a href="../OC/MOOC/Preview?OCID={{oc.OCID}}" target="_blank">
+               <i class="zxy_small_micro">
+               </i>
+               微课
+              </a>
+             </li>
+             <li title="讨论">
+              <a href="../CourseLive/Forum/index?currentoc={{oc.OCID}}" target="_self">
+               <i class="icon small_team">
+               </i>
+               讨论
+              </a>
+             </li>
+             <li title="作业">
+              <a href="../CourseLive/Test/StudentWorkList?currentoc={{oc.OCID}}" target="_self">
+               <i class="zxy_icon_test zxy_work_test">
+               </i>
+               作业
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="ng-cloak" ng-class="{true: 'study_box2', false: 'study_box'}[IsShowTeacherSpace==true]" ng-show="StudentOC.IsHistroy==1">
+         <div ng-if="IsShowTeacherSpace==false">
+          <div class="learn_box">
+           <ul class="learn_list">
+            <li ng-repeat="myOC in HistoryList|studentOCListFilter:'between':HistoryPageIndex:'3'">
+             <div class="img_box">
+              <img height="120" src='{{myOC.ImgFileUrl==null ? "../Images/default/Course_M.jpg":myOC.ImgFileUrl}}' style="cursor:pointer" width="220"/>
+              <p>
+               <span ng-bind="myOC.Name">
+               </span>
+               <a class="icon home_icon" href="../oc/site/preview#/student/column11?currentoc={{myOC.OCID}}" ng-show="myOC.IsHasSite" target="_self">
+               </a>
+              </p>
+             </div>
+             <div class="lecture_box">
+              <ul class="lecture_nav">
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==1]" ng-click="ChangeTab(myOC,1)">
+                关于课程
+               </li>
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==2]" ng-click="ChangeTab(myOC,2)" ng-show="myOC.IsShowMooc">
+                MOOC
+               </li>
+               <li ng-class="{true: 'active', false: ''}[myOC.ShowFirst==3]" ng-click="ChangeTab(myOC,3)" ng-show="myOC.IsShowFC &amp;&amp; configFZKT">
+                翻转课堂
+               </li>
+              </ul>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==1]">
+               <div class="about_box">
+                <span>
+                 <i class="icon user_icon">
+                 </i>
+                 {{myOC.TeacherName}}
+                </span>
+                <span>
+                 <i class="icon class_icon">
+                 </i>
+                 {{myOC.TeachingClassName}}
+                </span>
+                <p class="about_btn">
+                 <a class="discuss_btn" href="../CourseLive/Forum/index?currentoc={{myOC.OCID}}" target="_blank">
+                  讨论
+                 </a>
+                 <a class="work_btn" href="../CourseLive/Test/StudentWorkList?currentoc={{myOC.OCID}}" target="_blank">
+                  作业
+                 </a>
+                 <a class="note_btn" href="#?currentoc={{myOC.OCID}}" ng-hide="true" target="_self">
+                  笔记
+                 </a>
+                </p>
+               </div>
+              </div>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==2]" ng-show="myOC.IsShowMooc">
+               <div class="mooc_box">
+                <p class="text_explanation1" ng-click="GoToMyMoocFC(myOC,2)">
+                 我的进度：{{myOC.MyMoocRate}}%
+                </p>
+                <div class="bar_box bar_box2">
+                 <p class="standard_box" ng-style="set_Style(myOC.PlanMoocRate)">
+                  <span>
+                  </span>
+                 </p>
+                 <p class="mine_progress" ng-style="set_Style(myOC.MyMoocRate)">
+                  <span>
+                  </span>
+                 </p>
+                </div>
+                <p class="text_explanation2">
+                 标准进度：{{myOC.PlanMoocRate}}%
+                </p>
+               </div>
+              </div>
+              <div class="lecture_r" ng-class="{true: 'block', false: ''}[myOC.ShowFirst==3]" ng-show="myOC.IsShowFC">
+               <p class="label_box">
+                <span class="mine_label" ng-click="GoToMyMoocFC(myOC,3)">
+                 我的进度：{{myOC.MyFCRate}}%
+                </span>
+               </p>
+               <div class="mooc_box">
+                <div class="bar_box bar_box2">
+                 <p class="mine_progress" ng-style="set_Style(myOC.MyFCRate)">
+                  <span>
+                  </span>
+                 </p>
+                </div>
+                <p class="text_explanation2">
+                 进行中：{{myOC.InFCCount}} 已结束：{{myOC.FinishFCCount}}
+                </p>
+               </div>
+              </div>
+             </div>
+            </li>
+            <li ng-show="HistoryPageIndex==HistoryPagesNum">
+             <a class="select_btn_1" href="javascript:;" ng-hide="true" target="_self">
+              <span>
+               +
+              </span>
+              <em>
+               我要选课
+              </em>
+             </a>
+            </li>
+           </ul>
+          </div>
+          <span class="arrow_l" ng-click="GetPageList(0,1)">
+          </span>
+          <span class="arrow_r" ng-click="GetPageList(1,1)">
+          </span>
+          <ul class="list" style="right:auto;left:50%;margin-left:-24px;">
+           <li ng-class="{true: 'active', false: ''}[num==HistoryPageIndex]" ng-click="JumpPage(num,1)" ng-repeat="num in HistoryPagesNumList" style="cursor:pointer">
+           </li>
+          </ul>
+         </div>
+         <div ng-if="IsShowTeacherSpace==true">
+          <div class="switch_box">
+           <ul class="switch_list">
+            <li ng-class="{true: 'active', false: ''}[num==HistoryPageIndex]" ng-click="JumpPage(num,1)" ng-repeat="num in HistoryPagesNumList" style="cursor:pointer">
+            </li>
+           </ul>
+           <div class="course_switch">
+            <ul class="course_list">
+             <li ng-repeat="oc in HistoryList|studentOCListFilter:'between':HistoryPageIndex:'2'" on-get-my-histry-oc-list="">
+              <div class="img_tit">
+               <img height="150" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl!=null&amp;&amp;oc.ImgFileUrl.length&gt;0" src="{{oc.ImgFileUrl}}" style="cursor:pointer" width="280"/>
+               <img height="150" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl==null||oc.ImgFileUrl.length&lt;=0" src="../Images/default/Course_M.jpg" style="cursor:pointer" width="280"/>
+               <div class="course_intro">
+                <h4 ng-bind="oc.Name">
+                </h4>
+                <a class="icon home_icon" href="../Site/Preview?currentoc={{oc.OCID}}" ng-if="oc.IsHasSite==1" target="_blank">
+                </a>
+                <div class="micro_intro" ng-if="oc.IsMicro==1">
+                </div>
+               </div>
+              </div>
+              <ul class="icon_list">
+               <li ng-show="oc.IsShowFC &amp;&amp; configFZKT" title=" 翻转课堂">
+                <a href="../OC/FC/Student/FCStudentIndex?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 fanzhuan">
+                 </i>
+                 翻转课堂
+                </a>
+               </li>
+               <li ng-if="oc.IsHasSite==1" title="网站">
+                <a href="../Site/Preview?currentoc={{oc.OCID}}" target="_blank">
+                 <i class="icon_24 site">
+                 </i>
+                 网站
+                </a>
+               </li>
+               <li ng-if="oc.IsShowMooc&amp;&amp;oc.IsMicro==0" title="MOOC">
+                <a href="javascript:;" ng-click="StudyMOOC(oc)">
+                 <i class="icon_24 mooc">
+                 </i>
+                 MOOC
+                </a>
+               </li>
+               <li ng-show="oc.IsShowMooc&amp;&amp;oc.IsMicro==1&amp;&amp;configWK" title="微课">
+                <a href="../OC/MOOC/Preview?OCID={{oc.OCID}}" target="_blank">
+                 <i class="icon_24 micro">
+                 </i>
+                 微课
+                </a>
+               </li>
+               <li title="讨论">
+                <a href="../CourseLive/Forum/index?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 team">
+                 </i>
+                 讨论
+                </a>
+               </li>
+               <li title="作业">
+                <a href="../CourseLive/Test/StudentWorkList?currentoc={{oc.OCID}}" target="_self">
+                 <i class="icon_24 zxy_work">
+                 </i>
+                 作业
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </div>
+           <a class="icon course_prev" href="javascript:;" ng-click="GetPageList(0,1)">
+           </a>
+           <a class="icon course_next" href="javascript:;" ng-click="GetPageList(1,1)">
+           </a>
+          </div>
+          <div>
+           <a class="shouqi" href="javascript:;" id="ShowHirstyCourse" ng-click="SlideHirstyCourse()">
+            展开全部课程↓
+           </a>
+          </div>
+          <ul class="course_all" ng-show="ShowHirstyCourse">
+           <li ng-repeat="oc in HistoryList">
+            <a class="course_img">
+             <img height="65" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl!=null&amp;&amp;oc.ImgFileUrl.length&gt;0" src="{{oc.ImgFileUrl}}" style="cursor:pointer" width="120"/>
+             <img height="65" ng-click="GoOnLing(oc)" ng-if="oc.ImgFileUrl==null||oc.ImgFileUrl.length&lt;=0" src="../Images/default/Course_S.jpg" style="cursor:pointer" width="120"/>
+            </a>
+            <p ng-bind="oc.Name">
+            </p>
+            <ul class="small_icon">
+             <li ng-show="oc.IsShowFC &amp;&amp;configFZKT" title=" 翻转课堂">
+              <a href="../OC/FC/Student/FCStudentIndex?currentoc={{oc.OCID}}" target="_self">
+               <i class="icon small_fz">
+               </i>
+               翻转课堂
+              </a>
+             </li>
+             <li ng-if="oc.IsHasSite==1" title="网站">
+              <a href="../oc/site/preview#/student/column11?currentoc={{oc.OCID}}" target="_blank">
+               <i class="icon small_site">
+               </i>
+               网站
+              </a>
+             </li>
+             <li ng-if="oc.IsShowMooc&amp;&amp;oc.IsMicro==0" title="MOOC">
+              <a href="../OC/MOOC/Preview?OCID={{oc.OCID}}" target="_blank">
+               <i class="icon small_mooc">
+               </i>
+               MOOC
+              </a>
+             </li>
+             <li ng-show="oc.IsShowMooc&amp;&amp;oc.IsMicro==1 &amp;&amp; configWK" title="微课">
+              <a href="../OC/MOOC/Preview?OCID={{oc.OCID}}" target="_blank">
+               <i class="zxy_small_micro">
+               </i>
+               微课
+              </a>
+             </li>
+             <li title="讨论">
+              <a href="../CourseLive/Forum/index?currentoc={{oc.OCID}}" target="_self">
+               <i class="icon small_team">
+               </i>
+               讨论
+              </a>
+             </li>
+             <li title="作业">
+              <a href="../CourseLive/Test/StudentWorkList?currentoc={{oc.OCID}}" target="_self">
+               <i class="zxy_icon_test zxy_work_test">
+               </i>
+               作业
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <script src="/G2S/js/jquery-1.8.3.min.js">
+      </script>
+      <script src="/G2S/js/face.js">
+      </script>
+      <style>
+       .NoticeObjectClassName{
+        display:block;
+        float: left;
+        padding: 0 8px 0 8px;
+        background: #ccc;
+        color: #666;
+        margin-left:5px;
+         margin-top:5px;
+    }
+      </style>
+      <div class="message_box" ng-controller="NoticesController">
+       <ul class="message_nav">
+        <li ng-class="{true: 'active', false: ''}[NoticeModel.ModuleID==-1]" ng-click="ShowNotice(-1)" style="cursor:pointer">
+         <a>
+          全部通知
+         </a>
+        </li>
+        <li ng-class="{true: 'active', false: ''}[NoticeModel.ModuleID==1]" ng-click="ShowNotice(1)" style="cursor:pointer">
+         <a>
+          课程通知
+         </a>
+        </li>
+        <li ng-class="{true: 'active', false: ''}[NoticeModel.ModuleID==0]" ng-click="ShowNotice(0)" style="cursor:pointer">
+         <a>
+          系统通知
+         </a>
+        </li>
+       </ul>
+       <div class="issue_notice ng-cloak" ng-if="UserSpce==2">
+        <a>
+         <em>
+          <i class="icon">
+          </i>
+         </em>
+         <span ng-click="AddNotice()" style="cursor:pointer">
+          发布通知
+         </span>
+        </a>
+       </div>
+       <div class="message_detail">
+        <div class="message_list ng-cloak" ng-repeat="Notice in  NoticeList" ng-show="NoticeList.length&gt;=0" on-get-notice-list="">
+         <div class="message_tit">
+          <i class="icon star" ng-show="Notice.IsTop">
+          </i>
+          <h4 ng-bind-template="{{Notice.Title}}">
+          </h4>
+         </div>
+         <div class="message_tit" style=" margin-top:5px;">
+          <span class="NoticeObjectClassName" ng-bind-template="{{NoticeObject.ClassName}}" ng-repeat="NoticeObject in Notice.OCNoticeObjectList">
+          </span>
+         </div>
+         <p class="notice_content" ng-bind="Notice.Conten">
+         </p>
+         <div class="issue_detail">
+          <a class="comment_btn" id="comment_btn_{{Notice.NoticeID}}" loaded="true">
+           <span id="cmt_text_{{Notice.NoticeID}}">
+            收起
+           </span>
+           （
+           <span ng-bind-template="{{Notice.ResponseCount}}">
+           </span>
+           ）
+          </a>
+          <a class="notice_btn_del" id="notice_btn_del_{{Notice.NoticeID}}" ng-click="Notice_Del(Notice.NoticeID)" ng-if="Notice.IsCanDel">
+           [删除]
+          </a>
+          <a class="notice_btn_del" ng-click="Notice_Edit(Notice)" ng-if="Notice.IsCanDel">
+           [编辑]
+          </a>
+          <p>
+           <span ng-bind-template="{{Notice.UpdateTime|dateFormat}}">
+           </span>
+           来自:
+           <a class="notice_name" ng-bind-template="{{Notice.UserName}}" style="color: #374760; font-size: 13px;">
+           </a>
+           <span class="notice_ocname" ng-bind-template="{{Notice.OCName}}" title="{{Notice.OCName}}">
+           </span>
+          </p>
+         </div>
+         <div class="comment_box" id="comment_box_{{Notice.NoticeID}}" style="display:block">
+          <span class="triangle">
+          </span>
+          <div class="comment_content" style="display: block;">
+           <div class="chat_box">
+            <input class="chat_detail" id="chat_detail_{{Notice.NoticeID}}" type="text" value="请输入评论内容"/>
+            <textarea class="text_area" id="text_area_{{Notice.NoticeID}}" ng-model="Notice.RConten" style="display: none; border: 1px solid rgb(255, 55, 2);"></textarea>
+           </div>
+           <div class="expression" id="expression_{{Notice.NoticeID}}">
+            <a class="biaoqing Face_a fl" href="javascript:;" id="biaoqing_{{Notice.NoticeID}}" style="display:none;">
+             <i class="icon">
+             </i>
+             表情
+            </a>
+            <a class="issue_comment" href="javascript:;" ng-click="ResponseNotice(Notice.NoticeID,Notice.RConten)">
+             发表
+            </a>
+            <span class="talkCountTxt fr">
+             还能输入
+             <em>
+              250
+             </em>
+             字
+            </span>
+           </div>
+           <div class="comment_detail" id="comment_detail_{{Notice.NoticeID}}">
+            <ul class="comment_list">
+             <li ng-repeat="Response in Notice.NoticeResponse">
+              <img class="reply_img" height="30" src="" user-img="" userid="{{Response.UserID}}" width="30"/>
+              <p style="width: 590px; float: left;">
+               <a ng-bind="Response.UserName">
+               </a>
+               :
+               <span ng-bind="Response.Conten">
+               </span>
+               <b ng-bind="'('+Response.ResponseTimeStr+')'">
+               </b>
+              </p>
+              <a class="ts_response_btn_del" ng-click="NoticeResponse_Del(Response.ResponseID,Notice.NoticeID)" ng-if="Response.IsCanDel">
+               [删除]
+              </a>
+             </li>
+            </ul>
+            <a class="more_comment ng-cloak" href="javascript:;" ng-click="GetCommentShortDetail(Notice)" ng-show="Notice.ShowMore">
+             点击查看更多评论
+            </a>
+            <div class="ng-cloak" id="ResponcePages_{{Notice.NoticeID}}" ng-show="Notice.ShowPage" style="float:right;margin-right:20px; margin-top:20px;">
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div id="NoticePages" style="float:right;margin-right:20px; margin-top:10px;">
+        </div>
+       </div>
+       <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal hide fade" data-backdrop="static" id="myAddNoticeModal" role="dialog" style="width: 600px; position: absolute; left: 50%; margin-left: -300px; top: 200px; background: #eee8d5;" tabindex="-1">
+        <h4 class="h4Title">
+         发布通知
+        </h4>
+        <span class="icon close_pop" data-dismiss="modal">
+        </span>
+        <div class="inform_box">
+         <div class="inform_item">
+          <p class="inform_style" ng-hide="true">
+           <span>
+            <input ng-model="NoticeModel.IsEmail" type="checkbox"/>
+            同时发送邮件
+           </span>
+           <span>
+            <input ng-model="NoticeModel.IsSms" type="checkbox"/>
+            同时发送短信
+            <em>
+             （不得超过67字符，含标点符号、空格、签名）
+            </em>
+           </span>
+          </p>
+          <div class="issue_box">
+           <input class="issue_tit" ng-model="NoticeModel.Title" placeholder="通知标题（可不填）" type="text"/>
+           <div class="issue_content">
+            <textarea id="noticeText" ng-model="NoticeModel.Conten"></textarea>
+            <span class="red red_label">
+             *
+            </span>
+            <p class="inform_setting">
+             <span>
+              <input ng-model="NoticeModel.IsTop" style="height:13px" type="checkbox"/>
+              设为重要通知
+             </span>
+             <em>
+              已输入 0 字符
+             </em>
+            </p>
+            <div class="attach_box" ng-hide="true">
+             <a class="attach_btn" href="javascript:;">
+              上传附件
+             </a>
+             <ul class="attach_list">
+              <li>
+               <img height="60" src="http://placehold.it/76x60/cccccc" width="76"/>
+              </li>
+              <li>
+               <div class="file_box">
+                <i class="icon_24 ppt">
+                </i>
+                <p>
+                 关于爱国教育关于爱国教育
+                </p>
+                <span>
+                 <i class="icon throw_btn">
+                 </i>
+                </span>
+               </div>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="inform_item inform_item2">
+          <div class="user_select user_select2">
+           <div class="object_box object_box2">
+            <div class="object_item">
+             <a class="select_btn" href="javascript:;" ng-click="ShowClass()">
+              选择班级
+             </a>
+             <div class="section_box">
+              <span ng-repeat="OC in ClassList | listFilter4:'!=':'0'">
+               <a href="javascript:;">
+                {{OC.Name}}
+               </a>
+               <i class="icon_admin remove_btn" ng-click="DelClass(OC)">
+               </i>
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="issue_btn_box">
+          <a class="issue_btn" href="javascript:;" ng-click="PublishNotice()">
+           发布
+          </a>
+          <a class="cancel_btn" data-dismiss="modal" href="javascript:;">
+           取消
+          </a>
+         </div>
+        </div>
+       </div>
+       <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal hide fade" data-backdrop="static" id="mySelectClassModal" role="dialog" style=" width:400px;position: absolute; left: 50%; margin-left: -200px; top: 200px; background: #eee8d5; " tabindex="-1">
+        <h4 class="h4Title">
+         选择班级
+        </h4>
+        <span class="icon close_pop" data-dismiss="modal">
+        </span>
+        <div class="class_accord function_accord">
+         <div class="class_tit">
+          <p style="width:50px">
+           <input ng-click="ckb_Class_All()" ng-model="ClasCheckedAll.ClassAll" type="checkbox"/>
+           <label>
+            全选
+           </label>
+          </p>
+         </div>
+         <div class="course_management" style="max-height: 360px; overflow-y: auto;">
+          <dl ng-repeat="OC in ClassList | listFilter3:'=':'0'">
+           <dt>
+            <input ng-click="ckb_OC_Single(OC)" ng-model="OC.IsSelected" style="margin-top:0" type="checkbox"/>
+            {{OC.Name}}
+           </dt>
+           <dd style="margin-left:30px">
+            <div class="function_r">
+             <p ng-if="(ClassList|listFilter3:'=':OC.ID).length&lt;=0" style="display:block">
+             </p>
+             <p ng-repeat="class in ClassList| listFilter3:'=' :OC.ID" title="{{class.Name}}">
+              <input ng-click="ckb_Class_Single(class)" ng-model="class.IsSelected" style="margin-top:0" type="checkbox"/>
+              {{class.Name}}
+             </p>
+            </div>
+           </dd>
+          </dl>
+         </div>
+        </div>
+        <div class="class_btn_box" style="padding:20px 0px;">
+         <a class="issue_btn" href="javascript:;" ng-click="GetSelectClass()">
+          确定
+         </a>
+         <a class="cancel_btn" data-dismiss="modal" href="javascript:;">
+          取消
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="right_side" ng-controller="HomeController">
+      <p class="item_tit">
+       <span>
+        您有 6 个待处理事项
+       </span>
+       <a class="icon item_icon" href="javascript:;" ng-click="GetWaitingProcessNoCache()" style="visibility:hidden;display:none" title="更新互动提醒">
+       </a>
+      </p>
+      <div>
+       <ul class="question_list">
+        <li>
+         <a href="javascript:;" ng-click="WaitingClick(5)">
+          - 您有
+          <span>
+           1
+          </span>
+          份新的作业
+         </a>
+        </li>
+        <li>
+         <a href="javascript:;" ng-click="WaitingClick(9)">
+          - 您有
+          <span>
+           5
+          </span>
+          份新的投票
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="function_btn">
+       <a class="upload_data" href="/Resource/#/content/resource" target="_self">
+        上传资料
+       </a>
+      </div>
+      <div class="question_box">
+       <p class="item_tit">
+        常见问题2
+       </p>
+       <ul class="question_list">
+        <li class="ng-cloak" ng-click="ShowHelpDetails($index,0)" ng-repeat="help in OcHelpList" ng-show="OcHelpList.length&gt;0">
+         <a>
+          -
+          <span ng-bind-template="{{help.Title}}" style="cursor:pointer" title="{{help.Title}}">
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal hide fade" data-backdrop="static" id="showHelpModal" role="dialog" style="width:800px; position: absolute; left: 38%;  margin-top: 30px; top: 200px; " tabindex="-1">
+       <h4>
+        常见问题
+       </h4>
+       <i aria-hidden="true" class="icon close_pop" ng-click="HidenDialog()">
+       </i>
+       <div class="wrap_box popboxes_main">
+        <div class="popupquestion_box">
+         <div class="popupquestion_div1" ng-repeat="help in OcHelpList">
+          <p class="questiontitle_p" ng-click="ShowHelpDetails($index,1)">
+           <a>
+            {{help.Title}}
+           </a>
+          </p>
+          <p ng-bind-html="help.Content | toHtml" ng-class="{true: 'content block', false: 'content none'}[help.IsShow]" style="color:#666;font-size:12px">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <style>
+       .pop_80 {
+            width: 600px;
+            top: 60px;
+            margin-left: 0;
+            display: none;
+            height: auto;
+            left: 20%;
+        }
+
+
+        /*******pop_400**********/
+        .wrap_box {
+            /*border: 1px solid #ccc;*/
+            overflow: hidden;
+            padding: 19px;
+            padding-top:0px;
+            height: 300px;
+            overflow: auto;
+        }
+
+        .WaitingIcon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(../Images/FC/icon_index.png) no-repeat;
+        }
+
+        .WaitingIcon_close {
+            background-position: -37px -128px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            cursor: pointer;
+        }
+        .trbg {
+        
+            background-color:#f2f2f2;
+        
+        }
+        .text-align-left{
+            text-align:left;
+          
+        }
+        .towork_btn {color: #14638F;}
+        .towork_btn:hover{text-decoration:underline}
+      </style>
+      <div class="Waiting" style="background:#eee8d5">
+       <div ng-style="{'padding-right':WaitingProcessList.TestUserList.length&lt;=14?'19px':'32px'}" style="padding-left:19px; border-bottom-color: rgb(228, 228, 228); border-bottom-width: 1px; border-bottom-style: solid;">
+        <table class="ng-cloak" ng-show="WaitingType==5" style="width: 100%; line-height: 30px">
+         <thead>
+          <tr>
+           <th class="text-align-left" width="281">
+            作业名称
+           </th>
+           <th class="text-align-left" width="100">
+            作业开始时间
+           </th>
+           <th class="text-align-left" width="100">
+            作业结束时间
+           </th>
+           <th class="text-align-left">
+            操作
+           </th>
+          </tr>
+         </thead>
+        </table>
+       </div>
+       <div ng-style="{'padding-right':WaitingProcessList.SurveyList.length&lt;=14?'19px':'32px'}" style="padding-left:19px; ">
+        <table class="ng-cloak" ng-show="WaitingType==9" style="width: 100%; line-height: 30px">
+         <thead>
+          <tr>
+           <th class="text-align-left" width="281">
+            问卷名称
+           </th>
+           <th class="text-align-left" width="100">
+            投票开始时间
+           </th>
+           <th class="text-align-left" width="100">
+            投票结束时间
+           </th>
+           <th class="text-align-left">
+            操作
+           </th>
+          </tr>
+         </thead>
+        </table>
+       </div>
+       <div class="wrap_box" style="padding:0;color:#073642">
+        <table class="ng-cloak" ng-show="WaitingType==5" style="width:100%;line-height:30px">
+         <tr ng-class="test.RowNumber%2?'':'trbg'" ng-repeat="test in WaitingProcessList.TestUserList">
+          <td ng-bind="test.Name" style="text-indent:19px" width="300">
+          </td>
+          <td ng-bind="test.StartDate|dateFormat" width="100">
+          </td>
+          <td ng-bind="test.EndDate|dateFormat" width="100">
+          </td>
+          <td width="100">
+           <a class="towork_btn" href="javascript:;" ng-click="TestLinkClick(test)">
+            去做作业
+           </a>
+          </td>
+         </tr>
+        </table>
+        <table class="ng-cloak" ng-show="WaitingType==9" style="width: 100%; line-height: 30px">
+         <tr ng-class="survey.RowNumber%2?'':'trbg'" ng-repeat="survey in WaitingProcessList.SurveyList">
+          <td ng-bind="survey.Title" style="text-indent:19px" width="300">
+          </td>
+          <td ng-bind="survey.StartDate|dateFormat" width="100">
+          </td>
+          <td ng-bind="survey.EndDate|dateFormat" width="100">
+          </td>
+          <td class="" width="100">
+           <a class="towork_btn" href="javascript:;" ng-click="SurveyLinkClick(survey)">
+            前往投票
+           </a>
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div>
+     <div class="side_left" ng-controller="UserPermissionLeftController ">
+      <div class="user">
+       <img height="110" width="110"/>
+       <a class="teacher_name" href="#">
+        用户
+       </a>
+       <a class="switch_btn" href="" target="_self" title="">
+        学生端
+        <i class="icon icon_arrow">
+        </i>
+       </a>
+       <span class="icon_24 icon_user">
+       </span>
+      </div>
+      <div class="side_box">
+       <ul class="side_nav" style="height:auto;">
+        <li class="active">
+         <a href="/G2S/Home/StudentIndex?leftmenu=C11" target="_self">
+          我的空间
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/CourseLive/Forum/index?leftmenu=C12" target="_self">
+          答疑论坛
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/CourseLive/Test/StudentWorkList?leftmenu=C13" target="_self">
+          作业考试
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/OC/FC/Student/FCStudentIndex?leftmenu=C14" target="_self">
+          翻转课堂
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/CourseLive/Survey/index?leftmenu=C15" target="_self">
+          调查评价
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/CourseLive/Score/ScoreAnalyseStudent?leftmenu=C16" target="_self">
+          成绩档案
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/Certificate/Default?leftmenu=C17" target="_self">
+          我的证书
+         </a>
+        </li>
+        <li>
+         <a href="/G2S/Affairs/affairsindex?leftmenu=C18" target="_self">
+          申请预约
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="onlinebox" title="点我展开服务工具栏">
+      在线客服
+     </div>
+     <div class="onlinediv">
+      <span class="onlineclose" title="点我隐藏">
+       —
+      </span>
+      <ul>
+       <li style="border-bottom:2px solid #CDCDCD;">
+        <a href="http://v1.live800.com/live800/chatClient/chatbox.jsp?companyID=496937&amp;configID=41705&amp;jid=5578562966&amp;enterurl=&amp;info=userId%3D70962%26name%3D用户%26+memo+%3D%E6%9C%AA%E5%BC%80%E5%8F%91%E5%85%B6%E5%AE%83%E4%BF%A1%E6%81%AF" style="display:block;" target="_blank">
+         <div class="onlinekif" style="width:60px;height:50px;">
+         </div>
+         <span style="display:block;height:20px;line-height:20px;">
+          在线客服
+         </span>
+        </a>
+        <div class="curstrbox" style="padding-top:17px">
+         <span style="font-size:16px;font-weight:bold;line-height:20px;">
+          课程中心在线客服
+         </span>
+         <br/>
+         <span style="line-height:20px;">
+          服务时间:8:30~20:30
+         </span>
+        </div>
+       </li>
+       <li style="border-bottom:2px solid #CDCDCD;">
+        <a href="javascript:;" style="display:block;">
+         <div class="onlinephone" style="width:60px;height:50px;">
+         </div>
+         <span style="display:block;height:20px;line-height:20px;">
+          电话
+         </span>
+        </a>
+        <div class="curstrbox" style="padding-top:17px">
+         <span style="font-size:16px;font-weight:bold;line-height:20px;">
+          400-820-3579 转2
+         </span>
+         <br/>
+         <span style="line-height:20px">
+          服务时间:8:30~20:30
+         </span>
+        </div>
+       </li>
+       <li>
+        <a href="/G2S/Views/Help/index" style="display:block;" target="_blank">
+         <div class="onlinehelp" style="width:60px;height:50px;">
+         </div>
+         <span style="display:block;height:20px;line-height:20px;">
+          帮助
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div>
+    <div class="footer">
+     <p class="copyright">
+      <img alt="" height="30" src="/G2S/Images/company_logo2.png" width="70"/>
+      Copyright©2003-2014，卓越版权所有
+     </p>
+     <div class="company_info">
+      <a href="http://www.able-elec.com" target="_blank">
+       关于卓越
+      </a>
+     </div>
+    </div>
+   </div>
+   <a class="icon backto_top" href="#" onclick="$('body,html').animate({ scrollTop: 0 }, 300);">
+   </a>
+   <a class="icon_fold" href="javascript:;">
+   </a>
+  </div>
+  <script src="/G2S/js/es5.js">
+  </script>
+  <script src="/G2S/js/es5-shim.min.js">
+  </script>
+  <script src="/G2S/js/es5-sham.min.js">
+  </script>
+  <script src="/G2S/js/jquery-1.8.3.min.js">
+  </script>
+  <script src="/G2S/Frameworks/layer/layer.js">
+  </script>
+  <script src="/G2S/Frameworks/layer/extend/layer.ext.js">
+  </script>
+  <script src="/G2S/Frameworks/bootstrap/js/bootstrap.min.js">
+  </script>
+  <script src="/G2S/Frameworks/bootstrap/js/bootstrap-modal.js">
+  </script>
+  <script src="/G2S/Frameworks/bootstrap/js/bootstrap-transition.js">
+  </script>
+  <script src="/G2S/Frameworks/angular/angular.js">
+  </script>
+  <script src="/G2S/Frameworks/angular/angular-cookies.min.js">
+  </script>
+  <script src="/G2S/Frameworks/angular/console-sham.js">
+  </script>
+  <script src="/G2S/Frameworks/angular/angular-file-upload.js">
+  </script>
+  <script src="/G2S/Frameworks/angular/angular-ui-router.min.js">
+  </script>
+  <script src="/G2S/js/G2S.js">
+  </script>
+  <script src="/G2S/Frameworks/laypage/laypage.js">
+  </script>
+  <script src="/G2S/scripts/app.js">
+  </script>
+  <script src="/G2S/scripts/common/directives.js">
+  </script>
+  <script src="/G2S/scripts/common/filters.js">
+  </script>
+  <script src="/G2S/scripts/common/services.js">
+  </script>
+  <script src="/G2S/scripts/controllers/Home/HomeController.js">
+  </script>
+  <script src="/G2S/scripts/controllers/User/UserController.js">
+  </script>
+  <script src="/G2S/scripts/controllers/Home/StudentController.js">
+  </script>
+  <script src="/G2S/js/common.js">
+  </script>
+  <script src="/G2S/Frameworks/isteven-multi-select/isteven-multi-select.js">
+  </script>
+  <script>
+   $('.playa_btn').live('click', function () {
+            var fid = this.id.replace('file', '');
+            layer.open({
+                type: 2,
+                title: false,
+                border: [0],
+                scrollbar: false,
+                skin: 'layui-layer-rim',
+                content: ["http://elearning.njmu.edu.cn:80"+'/Upload/HttpUpload/iShowFile.aspx?fid=' + fid, 'no'],
+                area: ['820px', '562px']
+            });
+        })
+  </script>
+  <script src="/G2S/js/face.js">
+  </script>
+ </body>
+</html>

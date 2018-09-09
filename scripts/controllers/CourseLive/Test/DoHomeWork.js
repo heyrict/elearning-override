@@ -515,6 +515,17 @@ DoHomeWorkModule.controller("DoHomeWorkController", [
       $scope.TestTempSave_Upd(1);
     };
 
+    // Hack: Judge if answer is correct
+    $scope._hack_judge = exerciseId => {
+      let _choice = $scope.ExerciseChoices.find(
+        c => c.ChoiceID === parseInt(exerciseId, 10)
+      );
+      if (_choice) {
+        return String(_choice.IsCorrect);
+      }
+      return "default";
+    };
+
     //保存答案
     $scope.TestTempSave_Upd = function(n) {
       if (!$scope.isLoad) return;
